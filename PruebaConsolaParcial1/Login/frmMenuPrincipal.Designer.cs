@@ -117,6 +117,7 @@ namespace Login
             this.btnHistorialVentas.TabIndex = 7;
             this.btnHistorialVentas.Text = "Historial Ventas";
             this.btnHistorialVentas.UseVisualStyleBackColor = true;
+            this.btnHistorialVentas.Click += new System.EventHandler(this.btnHistorialVentas_Click);
             // 
             // FrmMenuPrincipal
             // 

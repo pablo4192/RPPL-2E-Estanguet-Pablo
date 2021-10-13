@@ -31,11 +31,9 @@ namespace Login
         {
             this.lblMenuBajaProducto = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblCodigoProducto = new System.Windows.Forms.Label();
             this.lblLegajo = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtLegajo = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
@@ -63,55 +61,38 @@ namespace Login
             this.lblUsuario.TabIndex = 1;
             this.lblUsuario.Text = "label2";
             // 
-            // lblNombre
+            // lblCodigoProducto
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(32, 79);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(64, 20);
-            this.lblNombre.TabIndex = 2;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // lblMarca
-            // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(46, 126);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(50, 20);
-            this.lblMarca.TabIndex = 3;
-            this.lblMarca.Text = "Marca";
+            this.lblCodigoProducto.AutoSize = true;
+            this.lblCodigoProducto.Location = new System.Drawing.Point(12, 91);
+            this.lblCodigoProducto.Name = "lblCodigoProducto";
+            this.lblCodigoProducto.Size = new System.Drawing.Size(122, 20);
+            this.lblCodigoProducto.TabIndex = 2;
+            this.lblCodigoProducto.Text = "Codigo Producto";
             // 
             // lblLegajo
             // 
             this.lblLegajo.AutoSize = true;
-            this.lblLegajo.Location = new System.Drawing.Point(410, 79);
+            this.lblLegajo.Location = new System.Drawing.Point(12, 135);
             this.lblLegajo.Name = "lblLegajo";
             this.lblLegajo.Size = new System.Drawing.Size(135, 20);
             this.lblLegajo.TabIndex = 4;
             this.lblLegajo.Text = "Contraseña usuario";
             // 
-            // txtNombre
+            // txtCodigo
             // 
-            this.txtNombre.Location = new System.Drawing.Point(111, 72);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.PlaceholderText = "Ingrese Nombre producto a eliminar";
-            this.txtNombre.Size = new System.Drawing.Size(254, 27);
-            this.txtNombre.TabIndex = 5;
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(111, 119);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.PlaceholderText = "Ingrese Marca producto a eliminar";
-            this.txtMarca.Size = new System.Drawing.Size(254, 27);
-            this.txtMarca.TabIndex = 6;
+            this.txtCodigo.Location = new System.Drawing.Point(161, 84);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.PlaceholderText = "Ingrese codigo Producto a eliminar";
+            this.txtCodigo.Size = new System.Drawing.Size(248, 27);
+            this.txtCodigo.TabIndex = 5;
             // 
             // txtLegajo
             // 
-            this.txtLegajo.Location = new System.Drawing.Point(551, 72);
+            this.txtLegajo.Location = new System.Drawing.Point(161, 128);
             this.txtLegajo.Name = "txtLegajo";
             this.txtLegajo.PlaceholderText = "Ingrese Contraseña (Legajo)";
-            this.txtLegajo.Size = new System.Drawing.Size(254, 27);
+            this.txtLegajo.Size = new System.Drawing.Size(248, 27);
             this.txtLegajo.TabIndex = 7;
             // 
             // btnEliminar
@@ -147,11 +128,12 @@ namespace Login
             // lblAviso
             // 
             this.lblAviso.AutoSize = true;
-            this.lblAviso.Location = new System.Drawing.Point(12, 163);
+            this.lblAviso.Location = new System.Drawing.Point(12, 165);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(50, 20);
             this.lblAviso.TabIndex = 11;
             this.lblAviso.Text = "label1";
+            this.lblAviso.Visible = false;
             // 
             // FrmBajaProducto
             // 
@@ -164,11 +146,9 @@ namespace Login
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtLegajo);
-            this.Controls.Add(this.txtMarca);
-            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblLegajo);
-            this.Controls.Add(this.lblMarca);
-            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.lblCodigoProducto);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblMenuBajaProducto);
             this.Name = "FrmBajaProducto";
@@ -185,11 +165,9 @@ namespace Login
 
         private System.Windows.Forms.Label lblMenuBajaProducto;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblCodigoProducto;
         private System.Windows.Forms.Label lblLegajo;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAtras;

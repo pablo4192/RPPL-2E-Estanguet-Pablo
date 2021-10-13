@@ -13,11 +13,12 @@ namespace Login
 {
     public partial class FrmBajaCliente : Form
     {
-
+        Usuario auxEmpleado; 
 
         private FrmBajaCliente()
         {
             InitializeComponent();
+            auxEmpleado = new Empleado();
         }
         public FrmBajaCliente(string usuario): this()
         {
@@ -40,7 +41,7 @@ namespace Login
         {
             if(MessageBox.Show($"Seguro desea eliminar al cliente numero {txtNumeroCliente.Text}?", "Confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (Empleado.EliminarCliente(txtNumeroCliente.Text))
+                if (auxEmpleado.EliminarCliente(txtNumeroCliente.Text))
                 {
                     lblAviso.Visible = true;
                     lblAviso.ForeColor = Color.Green;
@@ -71,7 +72,7 @@ namespace Login
                {
                     lblDatosAEliminar.Visible = true;
                     txtDatosClienteBaja.Visible = true;
-                    txtDatosClienteBaja.Text = Comercio.DatosClienteToString(keyInt);
+                    txtDatosClienteBaja.Text = Cliente.DatosClienteToString(keyInt);
                }
                else
                 {

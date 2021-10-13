@@ -230,6 +230,7 @@ namespace Login
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblMenuVentas);
             this.Name = "FrmVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmVentas";
             this.Load += new System.EventHandler(this.FrmVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCompra)).EndInit();

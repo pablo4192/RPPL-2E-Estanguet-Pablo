@@ -130,7 +130,7 @@ namespace Login
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(12, 143);
+            this.lblNombre.Location = new System.Drawing.Point(12, 153);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(64, 20);
             this.lblNombre.TabIndex = 7;
@@ -160,7 +160,7 @@ namespace Login
             // lblSueldo
             // 
             this.lblSueldo.AutoSize = true;
-            this.lblSueldo.Location = new System.Drawing.Point(480, 143);
+            this.lblSueldo.Location = new System.Drawing.Point(480, 153);
             this.lblSueldo.Name = "lblSueldo";
             this.lblSueldo.Size = new System.Drawing.Size(55, 20);
             this.lblSueldo.TabIndex = 10;
@@ -169,7 +169,7 @@ namespace Login
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(82, 136);
+            this.txtNombre.Location = new System.Drawing.Point(82, 146);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PlaceholderText = "Ingrese Nombre";
             this.txtNombre.Size = new System.Drawing.Size(125, 27);
@@ -196,7 +196,7 @@ namespace Login
             // 
             // txtSueldo
             // 
-            this.txtSueldo.Location = new System.Drawing.Point(549, 136);
+            this.txtSueldo.Location = new System.Drawing.Point(549, 146);
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.PlaceholderText = "Ingrese Sueldo";
             this.txtSueldo.Size = new System.Drawing.Size(125, 27);
@@ -244,7 +244,7 @@ namespace Login
             // lblDni
             // 
             this.lblDni.AutoSize = true;
-            this.lblDni.Location = new System.Drawing.Point(257, 143);
+            this.lblDni.Location = new System.Drawing.Point(255, 153);
             this.lblDni.Name = "lblDni";
             this.lblDni.Size = new System.Drawing.Size(32, 20);
             this.lblDni.TabIndex = 19;
@@ -253,7 +253,7 @@ namespace Login
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(304, 136);
+            this.txtDni.Location = new System.Drawing.Point(304, 146);
             this.txtDni.Name = "txtDni";
             this.txtDni.PlaceholderText = "Ingrese Dni";
             this.txtDni.Size = new System.Drawing.Size(125, 27);

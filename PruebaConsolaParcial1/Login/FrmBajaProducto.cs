@@ -13,9 +13,12 @@ namespace Login
 {
     public partial class FrmBajaProducto : Form
     {
+        Usuario auxEmpleado;
+
         private FrmBajaProducto()
         {
             InitializeComponent();
+            auxEmpleado = new Empleado();
         }
 
         public FrmBajaProducto(string usuario): this()
@@ -25,25 +28,37 @@ namespace Login
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            string nombre = this.txtNombre.Text;
-            string marca = this.txtMarca.Text;
-            string legajo = this.txtLegajo.Text;
+            Producto productoAEliminar;
+            
 
-            if(!Comercio.BajaProducto(nombre, marca, legajo))
+            productoAEliminar = Comercio.BuscarProducto(txtCodigo.Text);
+            
+            if(productoAEliminar != null && Comercio.VerificarUsuario(txtLegajo.Text, lblUsuario.Text))
+            {
+                if (!(Comercio.ListaProductos - productoAEliminar))
+                {
+                    lblAviso.Visible = true;
+                    lblAviso.ForeColor = Color.Red;
+                    lblAviso.Text = "El producto no pudo eliminarse, verifique los datos ingresado.";
+                }
+                else
+                {
+                    lblAviso.Visible = true;
+                    lblAviso.ForeColor = Color.Green;
+                    lblAviso.Text = "Producto eliminado.";
+                    this.dgvListaProductos.DataSource = null;
+                    this.dgvListaProductos.DataSource = Comercio.ListaProductos;
+                    Limpiar();
+                }
+            }
+            else
             {
                 lblAviso.Visible = true;
                 lblAviso.ForeColor = Color.Red;
                 lblAviso.Text = "El producto no pudo eliminarse, verifique los datos ingresado.";
             }
-            else
-            {
-                lblAviso.Visible = true;
-                lblAviso.ForeColor = Color.Green;
-                lblAviso.Text = "Producto eliminado.";
-                this.dgvListaProductos.DataSource = null;
-                this.dgvListaProductos.DataSource = Comercio.ListaProductos;
-                Limpiar();
-            }
+
+            
             
         }
 
@@ -56,8 +71,8 @@ namespace Login
 
         public void Limpiar()
         {
-            txtNombre.Text = string.Empty;
-            txtMarca.Text = string.Empty;
+            txtCodigo.Text = string.Empty;
+            
             txtLegajo.Text = string.Empty;
         }
 

@@ -13,9 +13,12 @@ namespace Login
 {
     public partial class FrmAltaProducto : Form
     {
+        Usuario auxEmpleado;
+
         private FrmAltaProducto()
         {
             InitializeComponent();
+            auxEmpleado = new Empleado();
         }
 
         public FrmAltaProducto(string usuario): this()
@@ -32,21 +35,38 @@ namespace Login
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(!Comercio.AltaProducto(txtNombre.Text, txtMarca.Text, txtCantidad.Text, cmbCategoria.SelectedItem.ToString(), txtPrecio.Text))
+            if(Comercio.ValidarProducto(txtNombre.Text, txtMarca.Text, txtCantidad.Text, cmbCategoria.SelectedItem.ToString(), txtPrecio.Text))
+            {
+                Producto auxProducto = new Producto(txtNombre.Text, txtMarca.Text, int.Parse(txtCantidad.Text), cmbCategoria.SelectedItem.ToString(), float.Parse(txtPrecio.Text), 0);
+
+                if (!(Comercio.ListaProductos + auxProducto)) 
+                {
+                    this.lblAviso.ForeColor = Color.Magenta;
+                    this.lblAviso.Visible = true;
+                    this.lblAviso.Text = "El producto ya existe, se actualizo en el stock";
+                    this.dgvListaProductos.DataSource = null;
+                    this.dgvListaProductos.DataSource = Comercio.ListaProductos;
+                }
+                else
+                {
+                    this.lblAviso.ForeColor = Color.Green;
+                    this.lblAviso.Visible = true;
+                    this.lblAviso.Text = "Producto agregado al stock!";
+                    this.dgvListaProductos.DataSource = null;
+                    this.dgvListaProductos.DataSource = Comercio.ListaProductos;
+                    Limpiar();
+                }
+            }
+            else
             {
                 this.lblAviso.ForeColor = Color.Red;
                 this.lblAviso.Visible = true;
                 this.lblAviso.Text = "Hubo un problema al dar de alta el producto, verifique los datos ingresados.";
             }
-            else
-            {
-                this.lblAviso.ForeColor = Color.Green;
-                this.lblAviso.Visible = true;
-                this.lblAviso.Text = "Producto agregado al stock!";
-                this.dgvListaProductos.DataSource = null;
-                this.dgvListaProductos.DataSource = Comercio.ListaProductos;
-                Limpiar();
-            }
+
+            
+
+           
             
         }
 

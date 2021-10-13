@@ -40,6 +40,18 @@ namespace Entidades
             
         }
 
+        //Constructor cliente por defecto
+        public Cliente(string nombre, string apellido, string cuit, int numeroCliente, bool poseeCuenta, float saldo)
+        {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.cuit = cuit;
+            this.numeroCliente = numeroCliente;
+            this.poseeCuenta = false;
+            this.saldo = saldo;
+
+        }
+
         public string Nombre
         {
             get { return nombre; }
@@ -76,8 +88,14 @@ namespace Entidades
             set { saldo = value; }
         }
 
+        public static string DatosClienteToString(int key)
+        {
+            return $"{Comercio.ListaClientes[key].Nombre} {Comercio.ListaClientes[key].Apellido}, Cuit: {Comercio.ListaClientes[key].Cuit}, Posee Cuenta: {Comercio.ListaClientes[key].PoseeCuenta}, Saldo: {Comercio.ListaClientes[key].Saldo}";
+        }
 
         
+
+
 
     }
 }

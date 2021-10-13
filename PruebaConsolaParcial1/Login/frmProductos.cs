@@ -67,7 +67,7 @@ namespace Login
                 lblAviso.Visible = false;
                 lblDatosProducto.Visible = true;
                 txtDatosProducto.Visible = true;
-                txtDatosProducto.Text = Comercio.DatosProductoToString(producto);
+                txtDatosProducto.Text = Producto.DatosProductoToString(producto);
             }
             else
             {

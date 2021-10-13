@@ -12,7 +12,7 @@ namespace Entidades
         static Dictionary<int, Empleado> listaEmpleados;
         static Dictionary<int, Cliente> listaClientes;
         static List<Producto> listaProductos;
-        static List<Ventas> listaVentas;
+        static List<Venta> listaVentas;
      
         static Comercio()
         {
@@ -20,12 +20,13 @@ namespace Entidades
             listaEmpleados = new Dictionary<int, Empleado>();
             listaClientes = new Dictionary<int, Cliente>();
             listaProductos = new List<Producto>();
-            listaVentas = new List<Ventas>();
+            listaVentas = new List<Venta>();
 
             Hardcodeo hardcodeo = new Hardcodeo();
             hardcodeo.HardcodearEmpleados();
             hardcodeo.HardcodearClientes();
             hardcodeo.HardcodearProductos();
+            hardcodeo.CargarPilasProducto();
             hardcodeo.CrearVentas();
         }
 
@@ -40,6 +41,7 @@ namespace Entidades
         {
             get { return listaProductos; }
             
+            
         }
 
         public static Dictionary<int, Cliente> ListaClientes
@@ -53,7 +55,7 @@ namespace Entidades
             
         }
 
-        public static List<Ventas> ListaVentas
+        public static List<Venta> ListaVentas
         {
             get { return listaVentas; }
             
@@ -76,7 +78,6 @@ namespace Entidades
             listaProductos.Add(unProducto);
         }
 
-        
         public static bool Loguearse(string usuario, string contrasenia)
         {
             foreach (KeyValuePair<int, Empleado> item in listaEmpleados)
@@ -90,78 +91,6 @@ namespace Entidades
             return false;
         }
             
-        
-        public static bool AltaProducto(string nombre, string marca, string cantidad, string categoria, string precio)
-        {
-            
-            int cantidadInt;
-            float precioFloat;
-            Producto nuevoProducto;
-
-            if (ValidarProducto(nombre, marca, cantidad, categoria, precio))
-            {
-                cantidadInt = int.Parse(cantidad);
-                precioFloat = float.Parse(precio);
-
-                foreach (Producto item in listaProductos)
-                {
-                    if(item.Nombre == nombre && item.Marca == marca)
-                    {
-                        item.Cantidad += cantidadInt;
-                        item.Precio = precioFloat;
-                        return true;
-                    }
-                }
-                nuevoProducto = new Producto(nombre, marca, cantidadInt, categoria, precioFloat);
-                AgregarProducto(nuevoProducto);
-                
-                return true; 
-            }
-
-            return false;
-        }
-
-        public static bool BajaProducto(string nombre, string marca, string legajo)
-        {
-            int legajoInt;
-
-            if(int.TryParse(legajo, out legajoInt))
-            {
-                foreach (KeyValuePair<int, Empleado> item in listaEmpleados)
-                {
-                    if (item.Key == legajoInt)
-                    {
-                        foreach (Producto item2 in listaProductos)
-                        {
-                            if(item2.Nombre == nombre && item2.Marca == marca)
-                            {
-                                listaProductos.Remove(item2);
-                                return true;
-                            }
-                        }
-                    }
-                    
-                }
-            }
-            return false;
-           
-        }
-
-        public static void ModificarProducto(Producto prodModificado)
-        {
-            Producto producto;
-
-            foreach (Producto item in listaProductos)
-            {
-                if(item.CodigoProd == prodModificado.CodigoProd)
-                {
-                    producto = item;
-                }
-            }
-            producto = prodModificado;
-        }
-
-        
         public static bool ValidarProducto(string nombre, string marca, string cantidad, string categoria, string precio)
         {
             float precioFloat;
@@ -171,21 +100,15 @@ namespace Entidades
                 int.TryParse(cantidad, out cantidadInt) &&
                 !string.IsNullOrEmpty(nombre) && 
                 !string.IsNullOrEmpty(marca) && 
-                !string.IsNullOrEmpty(categoria))
+                !string.IsNullOrEmpty(categoria) &&
+                precioFloat > 0 &&
+                cantidadInt > 0)
             {
                 return true;
             }
             return false;
         }
 
-        
-        public static string DatosClienteToString(int key)
-        {
-            
-            return $"{Comercio.ListaClientes[key].Nombre} {Comercio.ListaClientes[key].Apellido}, Cuit: {Comercio.ListaClientes[key].Cuit}, Posee Cuenta: {Comercio.ListaClientes[key].PoseeCuenta}, Saldo: {Comercio.ListaClientes[key].Saldo}";
-        }
-
-        
         public static bool ValidarCliente(string nombre, string apellido, string cuit, bool poseeCuenta, string saldo)
         {
             float saldoFloat;
@@ -201,8 +124,6 @@ namespace Entidades
 
             return false;
         }
-        
-        
         
         public static Producto BuscarProducto(string codProducto)
         {
@@ -220,30 +141,6 @@ namespace Entidades
             }
 
             return null;
-        }
-
-        public static Producto BuscarProducto(string codProducto, List<Producto> lista)
-        {
-            int codInt;
-
-            if (int.TryParse(codProducto, out codInt))
-            {
-                for (int i = 0; i < lista.Count; i++)
-                {
-                    if (lista[i].CodigoProd == codInt)
-                    {
-                        return lista[i];
-                    }
-                }
-            }
-
-            return null;
-        }
-
-
-        public static string DatosProductoToString(Producto unProducto)
-        {
-            return $"Nombre: {unProducto.Nombre}, Apellido: {unProducto.Marca}, Cantidad: {unProducto.Cantidad}, Categoria: {unProducto.Categoria}, Precio: {unProducto.Precio}";
         }
 
         public static bool VerificarAdministrador(string usuario)
@@ -348,6 +245,7 @@ namespace Entidades
                     if(item.Cantidad >= cantidad)
                     {
                         item.Cantidad -= cantidad;
+
                         return true;
                     }
                 }
@@ -356,59 +254,108 @@ namespace Entidades
             return false;
         }
 
+        public static bool ActualizarProducto(Producto unProducto)
+        {
+            foreach (Producto item in listaProductos)
+            {
+                if(item.CodigoProd == unProducto.CodigoProd)
+                {
+                    item.Cantidad += unProducto.Cantidad;
+                    return true;
+                }
+            }
 
+            return false;
+        }
+       
+        public static List<Venta> BuscarVentasPorCliente(string numeroCliente)
+        {
+            int numeroClienteInt;
+            bool flag = false;
+            List<Venta> auxListaVentas;
 
-        #region Metodos Mostrar para probar en consola.
-        //public static void MostrarEmpleadosEnConsola()
-        //{
-        //    Console.WriteLine("***Lista de Empleados***");
-        //    foreach (KeyValuePair<int, Empleado> item in listaEmpleados)
-        //    {
-        //        if (item.Value.GetType() == typeof(Administrador))
-        //        {
-        //            Console.WriteLine(((Administrador)item.Value).MostrarInfoAdmi());
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine($"nombre: {item.Value.Nombre}, apellido: {item.Value.Apellido}, usuario: {item.Value.Usuario}, sueldo: {item.Value.Sueldo}");
-        //        }
-        //    }
-        //}
+            if(int.TryParse(numeroCliente, out numeroClienteInt))
+            {
+                auxListaVentas = new List<Venta>();
 
-        //public static void MostrarClientesEnConsola()
-        //{
-        //    Console.WriteLine("***Lista de Clientes***");
-        //    foreach (KeyValuePair<int, Cliente> item in listaClientes)
-        //    {
-        //        Console.WriteLine("key: " + item.Key);
-        //        Console.WriteLine($"nombre: {item.Value.Nombre}, apellido: {item.Value.Apellido}, cuit: {item.Value.Cuit}, numero cliente: {item.Value.NumeroCliente}, saldo: {item.Value.Saldo}");
+                foreach (Venta item in listaVentas)
+                {
+                    if(item.Cliente == numeroClienteInt)
+                    {
+                        auxListaVentas.Add(item);
+                        flag = true;
+                    }
+                }
+                if(flag)
+                {
+                    return auxListaVentas;
+                }
+                
 
-        //    }
-        //}
+            }
+            return null;
+            
+            
+        }
 
-        //public static void MostrarProductos()
-        //{
-        //    Console.WriteLine("***Lista de productos***");
-        //    foreach (Producto item in listaProductos)
-        //    {
-        //        Console.WriteLine($"nombre: {item.Nombre}, marca: {item.Marca}, cantidad: {item.Cantidad}, categoria: {item.Categoria}, precio: {item.Precio}");
-        //    }
-        //}
-        #endregion
+        public static List<Venta> CalcularFacturacionMes(string mes, out double facturacion)
+        {
+            int mesInt;
+            facturacion = 0;
+            List<Venta> listaDelMes = new List<Venta>();
 
+            if(int.TryParse(mes, out mesInt))
+            {
+                foreach (Venta item in listaVentas)
+                {
+                    if (item.FechaCompra.Month == mesInt)
+                    {
+                        facturacion += item.Importe;
+                        listaDelMes.Add(item);
+                        
+                    }
+                }
+                
+                return listaDelMes;
+            }
+            
+            return null;
 
+        }
 
+        public static bool ValidarVenta(string numeroCliente, string importe)
+        {
+            float importeFloat;
 
+            if(float.TryParse(importe, out importeFloat))
+            {
+                if (listaClientes[int.Parse(numeroCliente)].Saldo >= importeFloat)
+                {
+                    listaClientes[int.Parse(numeroCliente)].Saldo -= importeFloat;
+                    return true;
+                }
+            }
+            return false;
+        }
 
+        public static bool VerificarUsuario(string legajo, string usuario)
+        {
+            int legajoInt;
 
+            if (int.TryParse(legajo, out legajoInt))
+            {
+                foreach (KeyValuePair<int, Empleado> item in Comercio.ListaEmpleados)
+                {
+                    if (item.Key == legajoInt && item.Value.Usuario == usuario)
+                    {
+                        return true;
+                    }
 
+                }
+            }
 
-
-
-
-
-
-
+            return false;
+        }
 
     }
 }

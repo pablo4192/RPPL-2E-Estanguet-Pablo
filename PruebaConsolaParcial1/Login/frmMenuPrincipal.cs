@@ -65,5 +65,12 @@ namespace Login
                 this.btnEmpleados.Enabled = false;
             }
         }
+
+        private void btnHistorialVentas_Click(object sender, EventArgs e)
+        {
+            FrmHistorialVentas frmHistorial = new FrmHistorialVentas(lblDatosUsuario.Text);
+            frmHistorial.Show();
+            this.Hide();
+        }
     }
 }

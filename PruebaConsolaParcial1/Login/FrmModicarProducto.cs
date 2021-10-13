@@ -13,11 +13,13 @@ namespace Login
 {
     public partial class FrmModicarProducto : Form
     {
+        Usuario auxEmpleado;
         Producto prodAModificar;
 
         private FrmModicarProducto()
         {
             InitializeComponent();
+            auxEmpleado = new Empleado();
         }
 
         public FrmModicarProducto(string usuario): this()
@@ -107,7 +109,7 @@ namespace Login
                      prodAModificar.Categoria = cmbCategoria.SelectedItem.ToString();
                      prodAModificar.Precio = float.Parse(txtPrecio.Text);
 
-                     Comercio.ModificarProducto(prodAModificar);
+                     auxEmpleado.ModificarProducto(prodAModificar);
 
                      dgvListaProductos.DataSource = null;
                      dgvListaProductos.DataSource = Comercio.ListaProductos;

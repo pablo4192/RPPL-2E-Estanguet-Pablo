@@ -13,11 +13,15 @@ namespace Login
 {
     public partial class FrmAltaCliente : Form
     {
+        Empleado auxEmpleado;
+        Administrador auxAdmi;
         bool esAdministrador = false;
         
         private FrmAltaCliente()
         {
             InitializeComponent();
+            auxEmpleado = new Empleado();
+            auxAdmi = new Administrador();
         }
 
         public FrmAltaCliente(string usuario):this()
@@ -45,9 +49,6 @@ namespace Login
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Empleado auxEmpleado = new Empleado("Prueba");
-            Administrador auxAdmi = new Administrador("Prueba");
-
             if(!esAdministrador)
             {
                 if (!auxEmpleado.AltaCliente(txtNombre.Text, txtApellido.Text, txtCuit.Text, false, "0"))
@@ -90,6 +91,8 @@ namespace Login
 
         private void Limpiar()
         {
+            
+
             txtNombre.Text = string.Empty;
             txtApellido.Text = string.Empty;
             txtCuit.Text = string.Empty;

@@ -11,17 +11,17 @@ namespace Entidades
     {
         #region Hardcodeo de Empleados, Clientes y Productos.
 
-        List<Producto> listaProdHardcodeada1 = new List<Producto>();
-        List<Producto> listaProdHardcodeada2 = new List<Producto>();
-        List<Producto> listaProdHardcodeada3 = new List<Producto>();
-        List<Producto> listaProdHardcodeada4 = new List<Producto>();
+        Stack<Producto> pilaProdHardcodeada1 = new Stack<Producto>();
+        Stack<Producto> pilaProdHardcodeada2 = new Stack<Producto>();
+        Stack<Producto> pilaProdHardcodeada3 = new Stack<Producto>();
+        Stack<Producto> pilaProdHardcodeada4 = new Stack<Producto>();
 
         Empleado empleado1 = new Empleado("Pepe", "Saenz", 33374859, "pepe1234", 50000);
         Empleado empleado2 = new Empleado("Carla", "Duque", 30689157, "lacarli77", 55000);
         Empleado empleado3 = new Empleado("Tomas", "Gandi", 25879654, "tomito22", 53000);
         Empleado empleado4 = new Empleado("Vera", "Espinola", 314569258, "veraesp00", 47000);
 
-        Administrador administrador1 = new Administrador("Roberto", "Ibanes", 30978123, "elrobert88", 65000, 1234);
+        Administrador administrador1 = new Administrador("Roberto", "Ibanes", 30978123, "elrobert88", 65000);
 
         Cliente cliente1 = new Cliente("Andrea", "Gomes", "20-33399102-3");
         Cliente cliente2 = new Cliente("Carlos", "Araujo", "20-25095687-2");
@@ -81,6 +81,23 @@ namespace Entidades
             Comercio.AgregarCliente(cliente10);
             Comercio.AgregarCliente(cliente11);
             Comercio.AgregarCliente(cliente12);
+
+            cliente3.PoseeCuenta = true;
+            cliente3.Saldo = 100000;
+
+            cliente6.PoseeCuenta = true;
+            cliente6.Saldo = 50000;
+
+            cliente7.PoseeCuenta = true;
+            cliente6.Saldo = 30000;
+
+            cliente10.PoseeCuenta = true;
+            cliente10.Saldo = 40000;
+
+            cliente12.PoseeCuenta = true;
+            cliente12.Saldo = 80000;
+
+
         }
 
         public void HardcodearProductos()
@@ -102,53 +119,53 @@ namespace Entidades
             Comercio.AgregarProducto(producto15);
         }
 
-        public void CargarListasProducto()
+        public void CargarPilasProducto()
         {
-            listaProdHardcodeada1.Add(producto15);
-            listaProdHardcodeada1.Add(producto12);
-            listaProdHardcodeada1.Add(producto1);
+            pilaProdHardcodeada1.Push(producto15);
+            pilaProdHardcodeada1.Push(producto12);
+            pilaProdHardcodeada1.Push(producto1);
 
-            listaProdHardcodeada2.Add(producto9);
-            listaProdHardcodeada2.Add(producto12);
-            listaProdHardcodeada2.Add(producto10);
-            listaProdHardcodeada2.Add(producto3);
+            pilaProdHardcodeada2.Push(producto9);
+            pilaProdHardcodeada2.Push(producto12);
+            pilaProdHardcodeada2.Push(producto10);
+            pilaProdHardcodeada2.Push(producto3);
 
-            listaProdHardcodeada3.Add(producto9);
-            listaProdHardcodeada3.Add(producto1);
-            listaProdHardcodeada3.Add(producto7);
-            listaProdHardcodeada3.Add(producto12);
-            listaProdHardcodeada3.Add(producto3);
-            listaProdHardcodeada3.Add(producto5);
+            pilaProdHardcodeada3.Push(producto9);
+            pilaProdHardcodeada3.Push(producto1);
+            pilaProdHardcodeada3.Push(producto7);
+            pilaProdHardcodeada3.Push(producto12);
+            pilaProdHardcodeada3.Push(producto3);
+            pilaProdHardcodeada3.Push(producto5);
 
-            listaProdHardcodeada4.Add(producto8);
-            listaProdHardcodeada4.Add(producto6);
-            listaProdHardcodeada4.Add(producto5);
-            listaProdHardcodeada4.Add(producto12);
-            listaProdHardcodeada4.Add(producto9);
-            listaProdHardcodeada4.Add(producto7);
-            listaProdHardcodeada4.Add(producto13);
-            listaProdHardcodeada4.Add(producto2);
+            pilaProdHardcodeada4.Push(producto8);
+            pilaProdHardcodeada4.Push(producto6);
+            pilaProdHardcodeada4.Push(producto5);
+            pilaProdHardcodeada4.Push(producto12);
+            pilaProdHardcodeada4.Push(producto9);
+            pilaProdHardcodeada4.Push(producto7);
+            pilaProdHardcodeada4.Push(producto13);
+            pilaProdHardcodeada4.Push(producto2);
 
 
         }
 
         public void CrearVentas()
         {
-            Ventas venta1 = new Ventas(listaProdHardcodeada1, cliente8.NumeroCliente , empleado2.Usuario, new DateTime(2021, 5, 12), CalcularTotal(listaProdHardcodeada1));
-            Ventas venta2 = new Ventas(listaProdHardcodeada2, cliente1.NumeroCliente , empleado1.Usuario, new DateTime(2021, 3, 1), CalcularTotal(listaProdHardcodeada2));
-            Ventas venta3 = new Ventas(listaProdHardcodeada3, cliente6.NumeroCliente, empleado4.Usuario, new DateTime(2021, 6, 20), CalcularTotal(listaProdHardcodeada3));
-            Ventas venta4 = new Ventas(listaProdHardcodeada4, cliente9.NumeroCliente, empleado1.Usuario, new DateTime(2021, 5, 15), CalcularTotal(listaProdHardcodeada4));
-            Ventas venta5 = new Ventas(listaProdHardcodeada2, cliente7.NumeroCliente, empleado1.Usuario, new DateTime(2021, 2, 11), CalcularTotal(listaProdHardcodeada2));
-            Ventas venta6 = new Ventas(listaProdHardcodeada4, cliente8.NumeroCliente, empleado3.Usuario, new DateTime(2021, 7, 6), CalcularTotal(listaProdHardcodeada4));
-            Ventas venta7 = new Ventas(listaProdHardcodeada2, cliente6.NumeroCliente, empleado4.Usuario, new DateTime(2021, 4, 22), CalcularTotal(listaProdHardcodeada2));
-            Ventas venta8 = new Ventas(listaProdHardcodeada3, cliente9.NumeroCliente, empleado2.Usuario, new DateTime(2021, 9, 12), CalcularTotal(listaProdHardcodeada3));
-            Ventas venta9 = new Ventas(listaProdHardcodeada1, cliente2.NumeroCliente, empleado1.Usuario, new DateTime(2021, 7, 10), CalcularTotal(listaProdHardcodeada1));
-            Ventas venta10 = new Ventas(listaProdHardcodeada1, cliente8.NumeroCliente, empleado2.Usuario, new DateTime(2021, 8, 16), CalcularTotal(listaProdHardcodeada1));
-            Ventas venta11 = new Ventas(listaProdHardcodeada3, cliente7.NumeroCliente, empleado3.Usuario, new DateTime(2021, 1, 19), CalcularTotal(listaProdHardcodeada3));
-            Ventas venta12 = new Ventas(listaProdHardcodeada4, cliente1.NumeroCliente, empleado4.Usuario, new DateTime(2021, 1, 9), CalcularTotal(listaProdHardcodeada4));
-            Ventas venta13 = new Ventas(listaProdHardcodeada3, cliente2.NumeroCliente, empleado4.Usuario, new DateTime(2021, 10, 3), CalcularTotal(listaProdHardcodeada3));
-            Ventas venta14 = new Ventas(listaProdHardcodeada1, cliente2.NumeroCliente, empleado1.Usuario, new DateTime(2021, 10, 2), CalcularTotal(listaProdHardcodeada1));
-            Ventas venta15 = new Ventas(listaProdHardcodeada2, cliente3.NumeroCliente, empleado3.Usuario, new DateTime(2021, 9, 8), CalcularTotal(listaProdHardcodeada2));
+            Venta venta1 = new Venta(pilaProdHardcodeada1, cliente8.NumeroCliente , empleado2.Usuario, new DateTime(2021, 5, 12), CalcularTotal(pilaProdHardcodeada1.ToList()));
+            Venta venta2 = new Venta(pilaProdHardcodeada2, cliente1.NumeroCliente , empleado1.Usuario, new DateTime(2021, 3, 1), CalcularTotal(pilaProdHardcodeada2.ToList()));
+            Venta venta3 = new Venta(pilaProdHardcodeada3, cliente6.NumeroCliente, empleado4.Usuario, new DateTime(2021, 6, 20), CalcularTotal(pilaProdHardcodeada3.ToList()));
+            Venta venta4 = new Venta(pilaProdHardcodeada4, cliente9.NumeroCliente, empleado1.Usuario, new DateTime(2021, 5, 15), CalcularTotal(pilaProdHardcodeada4.ToList()));
+            Venta venta5 = new Venta(pilaProdHardcodeada2, cliente7.NumeroCliente, empleado1.Usuario, new DateTime(2021, 2, 11), CalcularTotal(pilaProdHardcodeada2.ToList()));
+            Venta venta6 = new Venta(pilaProdHardcodeada4, cliente8.NumeroCliente, empleado3.Usuario, new DateTime(2021, 7, 6), CalcularTotal(pilaProdHardcodeada4.ToList()));
+            Venta venta7 = new Venta(pilaProdHardcodeada2, cliente6.NumeroCliente, empleado4.Usuario, new DateTime(2021, 4, 22), CalcularTotal(pilaProdHardcodeada2.ToList()));
+            Venta venta8 = new Venta(pilaProdHardcodeada3, cliente9.NumeroCliente, empleado2.Usuario, new DateTime(2021, 9, 12), CalcularTotal(pilaProdHardcodeada3.ToList()));
+            Venta venta9 = new Venta(pilaProdHardcodeada1, cliente2.NumeroCliente, empleado1.Usuario, new DateTime(2021, 7, 10), CalcularTotal(pilaProdHardcodeada1.ToList()));
+            Venta venta10 = new Venta(pilaProdHardcodeada1, cliente8.NumeroCliente, empleado2.Usuario, new DateTime(2021, 8, 16), CalcularTotal(pilaProdHardcodeada1.ToList()));
+            Venta venta11 = new Venta(pilaProdHardcodeada3, cliente7.NumeroCliente, empleado3.Usuario, new DateTime(2021, 1, 19), CalcularTotal(pilaProdHardcodeada3.ToList()));
+            Venta venta12 = new Venta(pilaProdHardcodeada4, cliente1.NumeroCliente, empleado4.Usuario, new DateTime(2021, 1, 9), CalcularTotal(pilaProdHardcodeada4.ToList()));
+            Venta venta13 = new Venta(pilaProdHardcodeada3, cliente2.NumeroCliente, empleado4.Usuario, new DateTime(2021, 10, 3), CalcularTotal(pilaProdHardcodeada3.ToList()));
+            Venta venta14 = new Venta(pilaProdHardcodeada4, cliente2.NumeroCliente, empleado1.Usuario, new DateTime(2021, 10, 2), CalcularTotal(pilaProdHardcodeada4.ToList()));
+            Venta venta15 = new Venta(pilaProdHardcodeada2, cliente3.NumeroCliente, empleado3.Usuario, new DateTime(2021, 9, 8), CalcularTotal(pilaProdHardcodeada2.ToList()));
 
             Comercio.ListaVentas.Add(venta1);
             Comercio.ListaVentas.Add(venta2);
@@ -167,15 +184,19 @@ namespace Entidades
             Comercio.ListaVentas.Add(venta15);
         }
 
-        private float CalcularTotal(List<Producto> lista)
+        
+        private float CalcularTotal(List<Producto> listaProductos)
         {
-            float importe = 0;
+            
+            float importeTotal = 0;
 
-            foreach (Producto item in lista)
+            for(int i=0; i<listaProductos.Count; i++)
             {
-                importe += item.Precio;
+                importeTotal += Comercio.CalcularImporte(listaProductos[i]);
+                
             }
-            return importe;
+
+            return importeTotal;
         }
         
 

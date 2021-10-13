@@ -13,9 +13,11 @@ namespace Login
 {
     public partial class FrmVentas : Form
     {
-        
-        List<Producto> auxListaProductos;
-        Ventas nuevaVenta;
+        Stack<Producto> auxPilaProductos;
+
+        Producto prodAgregado;
+       
+        Venta nuevaVenta;
         string numeroCliente;
         string codigoProducto;
         string cantidad;
@@ -31,7 +33,7 @@ namespace Login
         public FrmVentas(string usuario): this()
         {
             lblUsuario.Text = usuario;
-            auxListaProductos = new List<Producto>();
+            auxPilaProductos = new Stack<Producto>();
         }
 
         private void FrmVentas_Load(object sender, EventArgs e)
@@ -42,23 +44,64 @@ namespace Login
         private void btnConfirmarVenta_Click(object sender, EventArgs e)
         {
             lblAviso.Visible = true;
+            FrmMetodoDePago frmMetodo = new FrmMetodoDePago();
 
-            if (auxListaProductos.Count > 0)
+            DialogResult retorno = frmMetodo.ShowDialog();
+
+
+            if (retorno == DialogResult.Yes)
             {
-                nuevaVenta = new Ventas(auxListaProductos, int.Parse(numeroCliente), lblUsuario.Text, DateTime.Now, importe);
-                Comercio.ListaVentas.Add(nuevaVenta);
-                txtNumeroCliente.Enabled = true;
-                lblAviso.ForeColor = Color.Green;
-                lblAviso.Text = "Venta exitosa!";
-                auxListaProductos.Clear();
-                Limpiar();
+                if (Comercio.ValidarVenta(numeroCliente, txtImporte.Text))
+                {
+                    if (auxPilaProductos.Count > 0)
+                    {
+                        nuevaVenta = new Venta(auxPilaProductos, int.Parse(numeroCliente), lblUsuario.Text, DateTime.Now, importe);
+                        Comercio.ListaVentas.Add(nuevaVenta);
+                        txtNumeroCliente.Enabled = true;
+                        lblAviso.ForeColor = Color.Green;
+                        lblAviso.Text = "Venta exitosa!";
+                        auxPilaProductos.Clear();
+                        Limpiar();
+                    }
+                    else
+                    {
+
+                        lblAviso.ForeColor = Color.Red;
+                        lblAviso.Text = "No hay productos en el carrito";
+                    }
+                }
+                else
+                {
+                    lblAviso.ForeColor = Color.Red;
+                    lblAviso.Text = "Venta Cancelada, Saldo insuficiente";
+                }
             }
-            else
+            else if(retorno == DialogResult.No)
             {
-                
-                lblAviso.ForeColor = Color.Red;
-                lblAviso.Text = "No hay productos en el carrito";
+                if (auxPilaProductos.Count > 0)
+                {
+                    nuevaVenta = new Venta(auxPilaProductos, int.Parse(numeroCliente), lblUsuario.Text, DateTime.Now, importe);
+                    Comercio.ListaVentas.Add(nuevaVenta);
+                    txtNumeroCliente.Enabled = true;
+                    lblAviso.ForeColor = Color.Green;
+                    lblAviso.Text = "Venta exitosa!";
+                    auxPilaProductos.Clear();
+                    Limpiar();
+                }
+                else
+                {
+
+                    lblAviso.ForeColor = Color.Red;
+                    lblAviso.Text = "No hay productos en el carrito";
+                }
             }
+            
+            
+
+            
+            
+
+            
                 
 
             
@@ -82,16 +125,20 @@ namespace Login
                 {
                     if(Comercio.VerificarStockProducto(auxProducto, int.Parse(txtCantidad.Text)))
                     {
-                        auxProducto.Cantidad = int.Parse(txtCantidad.Text);
-                        auxListaProductos.Add(auxProducto); 
+                        prodAgregado = new Producto(auxProducto.Nombre, auxProducto.Marca, int.Parse(txtCantidad.Text), auxProducto.Categoria, auxProducto.Precio, auxProducto.CodigoProd);
+
+                        
+                        auxPilaProductos.Push(prodAgregado); 
+
                         dgvListaCompra.DataSource = null;
-                        dgvListaCompra.DataSource = auxListaProductos;
+                        dgvListaCompra.DataSource = auxPilaProductos.ToArray();
+
                         txtNumeroCliente.Enabled = false;
                         lblAviso.Visible = false;
                         lblDatosCliente.Visible = true;
-                        lblDatosCliente.Text = Comercio.DatosClienteToString(int.Parse(numeroCliente));
-                        ultimoProductoCarrito = auxProducto;
-                        importe += Comercio.CalcularImporte(auxProducto); 
+                        lblDatosCliente.Text = Cliente.DatosClienteToString(int.Parse(numeroCliente));
+                        
+                        importe += Comercio.CalcularImporte(prodAgregado); 
                         txtImporte.Text = importe.ToString();
                     }
                     else
@@ -119,19 +166,36 @@ namespace Login
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
-            if(auxListaProductos.Count > 1)
+            float importeADescontar;
+
+            if(auxPilaProductos.Count > 0)
             {
-                auxListaProductos.Remove(ultimoProductoCarrito);
-                dgvListaCompra.DataSource = null;
-                dgvListaCompra.DataSource = auxListaProductos;
-                importe -= ultimoProductoCarrito.Precio;
+                ultimoProductoCarrito = auxPilaProductos.Peek();
+
+                importeADescontar = Comercio.CalcularImporte(ultimoProductoCarrito);
+
+                importe -= importeADescontar;
                 txtImporte.Text = importe.ToString();
+
+                Comercio.ActualizarProducto(ultimoProductoCarrito);
+
+                auxPilaProductos.Pop();
+                
+                
+                dgvListaCompra.DataSource = null;
+                dgvListaCompra.DataSource = auxPilaProductos.ToArray();
             }
             
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
+            while (auxPilaProductos.Count > 0)
+            {
+                ultimoProductoCarrito = auxPilaProductos.Pop();
+                Comercio.ActualizarProducto(ultimoProductoCarrito);
+            }
+                
             FrmMenuPrincipal menu = new FrmMenuPrincipal(lblUsuario.Text);
             menu.Show();
             this.Hide();

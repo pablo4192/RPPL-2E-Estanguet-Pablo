@@ -49,7 +49,7 @@ namespace Login
                     lblAviso.Visible = false;
                     this.lblClienteBuscado.Visible = true;
                     this.txtClienteBuscado.Visible = true;
-                    this.txtClienteBuscado.Text = Comercio.DatosClienteToString(keyInt);     
+                    this.txtClienteBuscado.Text = Cliente.DatosClienteToString(keyInt);     
                 }
                 else
                 {

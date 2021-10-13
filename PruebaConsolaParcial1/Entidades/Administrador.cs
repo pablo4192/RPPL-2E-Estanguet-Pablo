@@ -8,17 +8,23 @@ namespace Entidades
 {
     public class Administrador: Empleado
     {
-        int claveAdm; 
-        
+        int claveAdm;
+        static int proximaClaveAdmi;
 
-        public Administrador(string nombre, string apellido, int dni, string usuario, float sueldo, int claveAdm) : base(nombre, apellido, dni, usuario, sueldo)
+        static Administrador()
         {
-            this.claveAdm = claveAdm;
+            proximaClaveAdmi = 1233;
         }
 
-        public Administrador(string nombreDefecto):base(nombreDefecto)
+        public Administrador(string nombre, string apellido, int dni, string usuario, float sueldo) : base(nombre, apellido, dni, usuario, sueldo)
         {
+            proximaClaveAdmi++;
+            this.claveAdm = proximaClaveAdmi;
+        }
 
+        public Administrador(): base()
+        {
+           this.claveAdm = 0;
         }
 
         public int ClaveAdm
@@ -26,12 +32,7 @@ namespace Entidades
             get { return claveAdm; }
         }
 
-        public string MostrarInfoAdmi()
-        {
-            
-            return $"nombre: {this.Nombre}, apellido: {this.Apellido}, usuario: {this.Usuario}, sueldo: {this.Sueldo}, clave administrador: {this.claveAdm}";
-        }
-
+        //Metodos Empleados
         public static bool AltaEmpleado(string nombre, string apellido, string dni,string usuario, string sueldo)
         {
             float sueldoFloat;
@@ -108,6 +109,7 @@ namespace Entidades
             return false;
         }
 
+        //Metodo Alta Cliente heredado de usuario con modificacion en asignar cuenta corriente y saldo 
         public new bool AltaCliente(string nombre, string apellido, string cuit, bool poseeCuenta, string saldo)
         {
             Cliente nuevoCliente;
@@ -139,6 +141,8 @@ namespace Entidades
             
             return $"{datos}, Clave Adm: { ((Administrador)Comercio.ListaEmpleados[key]).ClaveAdm}";
         }
+
+        
 
     }
 

@@ -45,6 +45,7 @@ namespace Login
             txtDatosEmpleado.Visible = false;
             lblDatosEmpleado.Visible = false;
             btnEliminar.Visible = false;
+            
             Limpiar();
         }
 
@@ -80,8 +81,8 @@ namespace Login
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Empleado empleado = new Empleado("Prueba");
-            Administrador auxAdmi = new Administrador("Prueba");
+            Empleado empleado = new Empleado();
+            Administrador auxAdmi = new Administrador();
 
             auxEmpleado = Comercio.BuscarEmpleado(txtBuscar.Text);
             if(auxEmpleado != null)
@@ -126,6 +127,7 @@ namespace Login
             lblDni.Visible = true;
             txtDni.Visible = true;
             btnEliminar.Visible = false;
+            
             Limpiar();
             
         }
@@ -178,6 +180,7 @@ namespace Login
             lblDatosEmpleado.Visible = true;
             txtDatosEmpleado.Visible = true;
             btnEliminar.Visible = true;
+           
             txtBuscar.PlaceholderText = "Ingrese legajo a eliminar";
 
         }
@@ -211,5 +214,7 @@ namespace Login
                 lblAviso.Text = "Baja cancelada";
             }
         }
+
+        
     }
 }

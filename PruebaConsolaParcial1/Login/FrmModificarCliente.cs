@@ -86,7 +86,8 @@ namespace Login
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Empleado auxEmpleado = new Empleado("Prueba");
+            Empleado auxEmpleado = new Empleado();
+            
             lblAviso.Visible = true;
 
             if(Comercio.ValidarCliente(txtNombre.Text, txtApellido.Text, txtCuit.Text, chkPoseeCuenta.Checked, txtSaldo.Text))

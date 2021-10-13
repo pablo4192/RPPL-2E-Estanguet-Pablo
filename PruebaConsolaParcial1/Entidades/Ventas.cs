@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Ventas
+    public class Venta
     {
         int numeroCompra;
-        List<Producto> productos;
+        Stack<Producto> productos;
         int cliente;
         string vendedor;
         DateTime fechaCompra;
@@ -17,18 +17,18 @@ namespace Entidades
 
         static int proximoNumeroCompra;
 
-        static Ventas()
+        static Venta()
         {
             proximoNumeroCompra = 0;
         }
 
-        public Ventas()
+        private Venta()
         {
             proximoNumeroCompra++;
             this.numeroCompra = proximoNumeroCompra;
         }
 
-        public Ventas(List<Producto> productos, int numCliente, string usuarioEmpleado, DateTime fechaCompra, float importe):this()
+        public Venta(Stack<Producto> productos, int numCliente, string usuarioEmpleado, DateTime fechaCompra, float importe):this()
         {
             this.productos = productos;
             this.cliente = numCliente;
@@ -37,7 +37,16 @@ namespace Entidades
             this.importe = importe;
         }
 
-        public List<Producto> Productos
+        
+
+        public int NumeroCompra
+        {
+            get { return numeroCompra; }
+            
+        }
+
+
+        public Stack<Producto> Productos
         {
             get { return productos; }
         }
@@ -56,6 +65,13 @@ namespace Entidades
         public float Importe
         {
             get { return importe; }
+        }
+
+        public static explicit operator List<Producto> (Venta unaVenta)
+        {
+            List<Producto> listaProductos = unaVenta.productos.ToList();
+
+            return listaProductos;
         }
 
 
