@@ -20,6 +20,8 @@ namespace Login
         {
             InitializeComponent();
             auxEmpleado = new Empleado();
+            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            this.Icon = icono;
         }
 
         public FrmModicarProducto(string usuario): this()

@@ -18,6 +18,8 @@ namespace Login
         private FrmModificarCliente()
         {
             InitializeComponent();
+            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            this.Icon = icono;
         }
 
         public FrmModificarCliente(string usuario): this()

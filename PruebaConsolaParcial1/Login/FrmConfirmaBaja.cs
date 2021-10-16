@@ -16,6 +16,8 @@ namespace Login
         public FrmConfirmaBaja()
         {
             InitializeComponent();
+            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            this.Icon = icono;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

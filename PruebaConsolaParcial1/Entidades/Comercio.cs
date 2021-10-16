@@ -86,6 +86,11 @@ namespace Entidades
                 {
                     return true;
                 }
+                else 
+                {
+                    UsuarioInvalidoException usuarioInvalidoExcepcion = new UsuarioInvalidoException();
+                    throw usuarioInvalidoExcepcion;
+                }
             }
 
             return false;
@@ -323,16 +328,22 @@ namespace Entidades
 
         }
 
+        //TENGO LANZADA UNA EXCEPCION ADENTRO.
         public static bool ValidarVenta(string numeroCliente, string importe)
         {
             float importeFloat;
 
-            if(float.TryParse(importe, out importeFloat))
+            if(float.TryParse(importe, out importeFloat) && !string.IsNullOrEmpty(numeroCliente))
             {
                 if (listaClientes[int.Parse(numeroCliente)].Saldo >= importeFloat)
                 {
                     listaClientes[int.Parse(numeroCliente)].Saldo -= importeFloat;
                     return true;
+                }
+                else
+                {
+                    ClienteSinDineroExcepcion clienteSinDineroExcepcion = new ClienteSinDineroExcepcion();
+                    throw clienteSinDineroExcepcion;
                 }
             }
             return false;
@@ -355,6 +366,33 @@ namespace Entidades
             }
 
             return false;
+        }
+
+        public static float CalcularEnvio(string importeCompra, int cantidadItems, out float costoEnvio)
+        {
+            Random kmsRandom = new Random();
+            float importeCompraFloat = 0;
+            float kmCamioneta = 60;
+            float kmMoto = 30;
+            costoEnvio = 0;
+
+
+            if (float.TryParse(importeCompra, out importeCompraFloat))
+            {
+                if (cantidadItems > 3)
+                {
+                    costoEnvio = kmCamioneta * kmsRandom.Next(1, 30);
+                    importeCompraFloat += costoEnvio;
+                }
+                else
+                {
+                    costoEnvio  = kmMoto * kmsRandom.Next(1, 30);
+                    importeCompraFloat += costoEnvio;
+
+                }
+            }
+            
+            return importeCompraFloat;
         }
 
     }

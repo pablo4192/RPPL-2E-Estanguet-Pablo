@@ -19,6 +19,8 @@ namespace Login
         public FrmLogin()
         {
             InitializeComponent();
+            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            this.Icon = icono;
         }
 
 
@@ -34,16 +36,22 @@ namespace Login
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if(Comercio.Loguearse(usuario, contrasenia))
+            try
             {
-                FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(usuario);
-                menuPrincipal.Show();
-                this.Hide();  // O close???
+                if (Comercio.Loguearse(usuario, contrasenia))
+                {
+                    FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(usuario);
+                    menuPrincipal.Show();
+                    this.Hide();  // O close???
+                }
+                
             }
-            else
+            catch(UsuarioInvalidoException usuarioInvalidoExcepcion)
             {
-                MessageBox.Show("Usuario o contraseña invalidas");
+                MessageBox.Show(usuarioInvalidoExcepcion.Message);
             }
+
+            
         }
 
 

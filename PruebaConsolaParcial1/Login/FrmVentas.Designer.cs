@@ -46,6 +46,7 @@ namespace Login
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.lblImporte = new System.Windows.Forms.Label();
             this.txtImporte = new System.Windows.Forms.TextBox();
+            this.chkEnvio = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,12 +207,23 @@ namespace Login
             this.txtImporte.Size = new System.Drawing.Size(125, 27);
             this.txtImporte.TabIndex = 16;
             // 
+            // chkEnvio
+            // 
+            this.chkEnvio.AutoSize = true;
+            this.chkEnvio.Location = new System.Drawing.Point(520, 157);
+            this.chkEnvio.Name = "chkEnvio";
+            this.chkEnvio.Size = new System.Drawing.Size(148, 24);
+            this.chkEnvio.TabIndex = 17;
+            this.chkEnvio.Text = "Envio a Domicilio";
+            this.chkEnvio.UseVisualStyleBackColor = true;
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chkEnvio);
             this.Controls.Add(this.txtImporte);
             this.Controls.Add(this.lblImporte);
             this.Controls.Add(this.btnEliminarProducto);
@@ -257,6 +269,7 @@ namespace Login
         private System.Windows.Forms.Label lblDatosCliente;
         private System.Windows.Forms.Button btnEliminarProducto;
         private System.Windows.Forms.Label lblImporte;
+        private System.Windows.Forms.CheckBox chkEnvio;
         private System.Windows.Forms.TextBox txtImporte;
     }
 }

@@ -16,6 +16,8 @@ namespace Login
         private FrmMenuPrincipal()
         {
             InitializeComponent();
+            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            this.Icon = icono;
         }
 
         public FrmMenuPrincipal(string usuario): this()
@@ -72,5 +74,7 @@ namespace Login
             frmHistorial.Show();
             this.Hide();
         }
+
+        
     }
 }

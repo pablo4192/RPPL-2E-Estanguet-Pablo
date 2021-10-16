@@ -22,12 +22,15 @@ namespace Login
         string codigoProducto;
         string cantidad;
         float importe;
+        
         Producto ultimoProductoCarrito;
 
         private FrmVentas()
         {
             InitializeComponent();
-            
+            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            this.Icon = icono;
+
         }
 
         public FrmVentas(string usuario): this()
@@ -44,14 +47,45 @@ namespace Login
         private void btnConfirmarVenta_Click(object sender, EventArgs e)
         {
             lblAviso.Visible = true;
-            FrmMetodoDePago frmMetodo = new FrmMetodoDePago();
+            FrmMetodoDePago frmMetodo = new FrmMetodoDePago(txtImporte.Text, auxPilaProductos.Count, chkEnvio.Checked);
 
-            DialogResult retorno = frmMetodo.ShowDialog();
-
-
-            if (retorno == DialogResult.Yes)
+            if(!string.IsNullOrEmpty(txtImporte.Text))
             {
-                if (Comercio.ValidarVenta(numeroCliente, txtImporte.Text))
+                DialogResult retorno = frmMetodo.ShowDialog();
+
+                if (retorno == DialogResult.Yes)
+                {
+                    try //Excepcion
+                    {
+                        if (Comercio.ValidarVenta(numeroCliente, frmMetodo.ImporteTotal.ToString()))
+                        {
+                            if (auxPilaProductos.Count > 0)
+                            {
+                                nuevaVenta = new Venta(auxPilaProductos, int.Parse(numeroCliente), lblUsuario.Text, DateTime.Now, importe);
+                                Comercio.ListaVentas.Add(nuevaVenta);
+                                txtNumeroCliente.Enabled = true;
+                                lblAviso.ForeColor = Color.Green;
+                                lblAviso.Text = "Venta exitosa!";
+                                auxPilaProductos.Clear();
+                                Limpiar();
+                            }
+                            else
+                            {
+
+                                lblAviso.ForeColor = Color.Red;
+                                lblAviso.Text = "No hay productos en el carrito";
+                            }
+                        }
+                        
+                    }
+                    catch(ClienteSinDineroExcepcion clienteSinDineroExcepcion)
+                    {
+                        MessageBox.Show(clienteSinDineroExcepcion.Message);
+                    }
+
+                    
+                }
+                else if (retorno == DialogResult.No)
                 {
                     if (auxPilaProductos.Count > 0)
                     {
@@ -70,41 +104,14 @@ namespace Login
                         lblAviso.Text = "No hay productos en el carrito";
                     }
                 }
-                else
-                {
-                    lblAviso.ForeColor = Color.Red;
-                    lblAviso.Text = "Venta Cancelada, Saldo insuficiente";
-                }
+
+
             }
-            else if(retorno == DialogResult.No)
+            else
             {
-                if (auxPilaProductos.Count > 0)
-                {
-                    nuevaVenta = new Venta(auxPilaProductos, int.Parse(numeroCliente), lblUsuario.Text, DateTime.Now, importe);
-                    Comercio.ListaVentas.Add(nuevaVenta);
-                    txtNumeroCliente.Enabled = true;
-                    lblAviso.ForeColor = Color.Green;
-                    lblAviso.Text = "Venta exitosa!";
-                    auxPilaProductos.Clear();
-                    Limpiar();
-                }
-                else
-                {
-
-                    lblAviso.ForeColor = Color.Red;
-                    lblAviso.Text = "No hay productos en el carrito";
-                }
+                lblAviso.ForeColor = Color.Red;
+                lblAviso.Text = "Verifique datos ingresados";
             }
-            
-            
-
-            
-            
-
-            
-                
-
-            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -209,7 +216,7 @@ namespace Login
             txtImporte.Text = string.Empty;
             lblDatosCliente.Text = string.Empty;
             lblDatosCliente.Visible = false;
-            
+            chkEnvio.Checked = false;
             dgvListaCompra.DataSource = null;
         }
     }

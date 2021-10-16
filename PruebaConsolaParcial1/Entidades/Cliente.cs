@@ -85,7 +85,10 @@ namespace Entidades
         public float Saldo
         {
             get { return saldo; }
-            set { saldo = value; }
+            set 
+            { 
+                saldo = value; 
+            }
         }
 
         public static string DatosClienteToString(int key)

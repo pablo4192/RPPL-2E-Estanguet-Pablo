@@ -20,6 +20,8 @@ namespace Login
         private FrmVentaPorCliente()
         {
             InitializeComponent();
+            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            this.Icon = icono;
         }
 
         public FrmVentaPorCliente(List<Venta> listaVentas): this()
