@@ -53,57 +53,68 @@ namespace Login
             // lblMenuVentas
             // 
             this.lblMenuVentas.AutoSize = true;
-            this.lblMenuVentas.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMenuVentas.Location = new System.Drawing.Point(30, 27);
+            this.lblMenuVentas.BackColor = System.Drawing.Color.Transparent;
+            this.lblMenuVentas.Font = new System.Drawing.Font("Perpetua Titling MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMenuVentas.Location = new System.Drawing.Point(12, 9);
             this.lblMenuVentas.Name = "lblMenuVentas";
-            this.lblMenuVentas.Size = new System.Drawing.Size(179, 27);
+            this.lblMenuVentas.Size = new System.Drawing.Size(276, 28);
             this.lblMenuVentas.TabIndex = 0;
             this.lblMenuVentas.Text = "Menu Nueva Venta";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(247, 34);
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuario.Location = new System.Drawing.Point(310, 17);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(50, 20);
+            this.lblUsuario.Size = new System.Drawing.Size(52, 17);
             this.lblUsuario.TabIndex = 1;
             this.lblUsuario.Text = "label2";
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(520, 192);
+            this.btnAtras.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAtras.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAtras.Location = new System.Drawing.Point(520, 184);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(131, 39);
+            this.btnAtras.Size = new System.Drawing.Size(131, 47);
             this.btnAtras.TabIndex = 2;
             this.btnAtras.Text = "Atras";
-            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // btnConfirmarVenta
             // 
-            this.btnConfirmarVenta.Location = new System.Drawing.Point(657, 192);
+            this.btnConfirmarVenta.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnConfirmarVenta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirmarVenta.Location = new System.Drawing.Point(657, 184);
             this.btnConfirmarVenta.Name = "btnConfirmarVenta";
-            this.btnConfirmarVenta.Size = new System.Drawing.Size(131, 39);
+            this.btnConfirmarVenta.Size = new System.Drawing.Size(131, 47);
             this.btnConfirmarVenta.TabIndex = 3;
             this.btnConfirmarVenta.Text = "Confirmar Venta";
-            this.btnConfirmarVenta.UseVisualStyleBackColor = true;
+            this.btnConfirmarVenta.UseVisualStyleBackColor = false;
             this.btnConfirmarVenta.Click += new System.EventHandler(this.btnConfirmarVenta_Click);
             // 
             // lblCodigoProducto
             // 
             this.lblCodigoProducto.AutoSize = true;
+            this.lblCodigoProducto.BackColor = System.Drawing.Color.Transparent;
+            this.lblCodigoProducto.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCodigoProducto.Location = new System.Drawing.Point(20, 118);
             this.lblCodigoProducto.Name = "lblCodigoProducto";
-            this.lblCodigoProducto.Size = new System.Drawing.Size(122, 20);
+            this.lblCodigoProducto.Size = new System.Drawing.Size(131, 17);
             this.lblCodigoProducto.TabIndex = 4;
             this.lblCodigoProducto.Text = "Codigo Producto";
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(73, 164);
+            this.lblCantidad.BackColor = System.Drawing.Color.Transparent;
+            this.lblCantidad.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCantidad.Location = new System.Drawing.Point(73, 167);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(69, 20);
+            this.lblCantidad.Size = new System.Drawing.Size(71, 17);
             this.lblCantidad.TabIndex = 5;
             this.lblCantidad.Text = "Cantidad";
             // 
@@ -126,9 +137,11 @@ namespace Login
             // lblNumeroCliente
             // 
             this.lblNumeroCliente.AutoSize = true;
+            this.lblNumeroCliente.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumeroCliente.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNumeroCliente.Location = new System.Drawing.Point(29, 76);
             this.lblNumeroCliente.Name = "lblNumeroCliente";
-            this.lblNumeroCliente.Size = new System.Drawing.Size(113, 20);
+            this.lblNumeroCliente.Size = new System.Drawing.Size(123, 17);
             this.lblNumeroCliente.TabIndex = 8;
             this.lblNumeroCliente.Text = "Numero Cliente";
             // 
@@ -152,17 +165,20 @@ namespace Login
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.Honeydew;
+            this.btnAgregar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAgregar.Location = new System.Drawing.Point(336, 157);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(143, 27);
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblAviso
             // 
             this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.Transparent;
             this.lblAviso.Location = new System.Drawing.Point(336, 122);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(50, 20);
@@ -173,6 +189,7 @@ namespace Login
             // lblDatosCliente
             // 
             this.lblDatosCliente.AutoSize = true;
+            this.lblDatosCliente.BackColor = System.Drawing.Color.Transparent;
             this.lblDatosCliente.Location = new System.Drawing.Point(336, 80);
             this.lblDatosCliente.Name = "lblDatosCliente";
             this.lblDatosCliente.Size = new System.Drawing.Size(50, 20);
@@ -182,20 +199,25 @@ namespace Login
             // 
             // btnEliminarProducto
             // 
+            this.btnEliminarProducto.BackColor = System.Drawing.Color.Firebrick;
+            this.btnEliminarProducto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminarProducto.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnEliminarProducto.Location = new System.Drawing.Point(336, 202);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(143, 29);
             this.btnEliminarProducto.TabIndex = 14;
             this.btnEliminarProducto.Text = "Eliminar Producto";
-            this.btnEliminarProducto.UseVisualStyleBackColor = true;
+            this.btnEliminarProducto.UseVisualStyleBackColor = false;
             this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
             // lblImporte
             // 
             this.lblImporte.AutoSize = true;
+            this.lblImporte.BackColor = System.Drawing.Color.Transparent;
+            this.lblImporte.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblImporte.Location = new System.Drawing.Point(80, 211);
             this.lblImporte.Name = "lblImporte";
-            this.lblImporte.Size = new System.Drawing.Size(62, 20);
+            this.lblImporte.Size = new System.Drawing.Size(64, 17);
             this.lblImporte.TabIndex = 15;
             this.lblImporte.Text = "Importe";
             // 
@@ -204,24 +226,25 @@ namespace Login
             this.txtImporte.Location = new System.Drawing.Point(158, 204);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.ReadOnly = true;
-            this.txtImporte.Size = new System.Drawing.Size(125, 27);
+            this.txtImporte.Size = new System.Drawing.Size(172, 27);
             this.txtImporte.TabIndex = 16;
             // 
             // chkEnvio
             // 
             this.chkEnvio.AutoSize = true;
+            this.chkEnvio.BackColor = System.Drawing.Color.Transparent;
+            this.chkEnvio.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.chkEnvio.Location = new System.Drawing.Point(520, 157);
             this.chkEnvio.Name = "chkEnvio";
-            this.chkEnvio.Size = new System.Drawing.Size(148, 24);
+            this.chkEnvio.Size = new System.Drawing.Size(161, 21);
             this.chkEnvio.TabIndex = 17;
             this.chkEnvio.Text = "Envio a Domicilio";
-            this.chkEnvio.UseVisualStyleBackColor = true;
+            this.chkEnvio.UseVisualStyleBackColor = false;
             // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.chkEnvio);
             this.Controls.Add(this.txtImporte);
@@ -242,7 +265,6 @@ namespace Login
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblMenuVentas);
             this.Name = "FrmVentas";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmVentas";
             this.Load += new System.EventHandler(this.FrmVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCompra)).EndInit();

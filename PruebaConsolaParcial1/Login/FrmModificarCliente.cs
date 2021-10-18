@@ -11,14 +11,14 @@ using Entidades;
 
 namespace Login
 {
-    public partial class FrmModificarCliente : Form
+    public partial class FrmModificarCliente : FrmBase
     {
         Cliente clienteAModificar;
 
         private FrmModificarCliente()
         {
             InitializeComponent();
-            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
             this.Icon = icono;
         }
 
@@ -127,5 +127,7 @@ namespace Login
             frmCliente.Show();
             this.Hide();
         }
+
+        
     }
 }

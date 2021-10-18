@@ -49,38 +49,45 @@ namespace Login
             // lblClaveAdm
             // 
             this.lblClaveAdm.AutoSize = true;
-            this.lblClaveAdm.Location = new System.Drawing.Point(40, 135);
+            this.lblClaveAdm.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblClaveAdm.Location = new System.Drawing.Point(43, 135);
             this.lblClaveAdm.Name = "lblClaveAdm";
-            this.lblClaveAdm.Size = new System.Drawing.Size(142, 20);
+            this.lblClaveAdm.Size = new System.Drawing.Size(155, 17);
             this.lblClaveAdm.TabIndex = 1;
             this.lblClaveAdm.Text = "Clave administrador";
             // 
             // btnConfirmar
             // 
+            this.btnConfirmar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnConfirmar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirmar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConfirmar.Location = new System.Drawing.Point(279, 175);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(94, 29);
+            this.btnConfirmar.Size = new System.Drawing.Size(94, 37);
             this.btnConfirmar.TabIndex = 2;
             this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.Location = new System.Drawing.Point(178, 175);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(94, 37);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblLegajo
             // 
             this.lblLegajo.AutoSize = true;
-            this.lblLegajo.Location = new System.Drawing.Point(128, 89);
+            this.lblLegajo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLegajo.Location = new System.Drawing.Point(139, 92);
             this.lblLegajo.Name = "lblLegajo";
-            this.lblLegajo.Size = new System.Drawing.Size(54, 20);
+            this.lblLegajo.Size = new System.Drawing.Size(57, 17);
             this.lblLegajo.TabIndex = 4;
             this.lblLegajo.Text = "Legajo";
             // 
@@ -95,10 +102,10 @@ namespace Login
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.Location = new System.Drawing.Point(4, 22);
+            this.lblTitulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.Location = new System.Drawing.Point(12, 25);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(408, 23);
+            this.lblTitulo.Size = new System.Drawing.Size(389, 17);
             this.lblTitulo.TabIndex = 6;
             this.lblTitulo.Text = "Para confirmar la baja complete los siguientes datos";
             // 

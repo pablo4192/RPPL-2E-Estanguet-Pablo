@@ -23,13 +23,13 @@ namespace Entidades
         public string Nombre
         {
             get { return nombre; }
-            set { if (string.IsNullOrEmpty(value)) nombre = value; }
+            set { if (!string.IsNullOrEmpty(value)) nombre = value; }
         }
 
         public string Apellido
         {
             get { return apellido; }
-            set { if (string.IsNullOrEmpty(value)) apellido = value; }
+            set { if (!string.IsNullOrEmpty(value)) apellido = value; }
         }
 
         public int Dni

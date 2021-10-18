@@ -11,7 +11,7 @@ using Entidades;
 
 namespace Login
 {
-    public partial class FrmFacturacionTotal : Form
+    public partial class FrmFacturacionTotal : FrmBase
     {
         List<Venta> listaDelMes;
 
@@ -19,7 +19,7 @@ namespace Login
         {
             InitializeComponent();
             listaDelMes = new List<Venta>();
-            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
             this.Icon = icono;
         }
 

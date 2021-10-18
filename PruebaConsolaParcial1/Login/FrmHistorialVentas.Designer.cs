@@ -53,39 +53,47 @@ namespace Login
             // lblMenuHistorialVentas
             // 
             this.lblMenuHistorialVentas.AutoSize = true;
+            this.lblMenuHistorialVentas.BackColor = System.Drawing.Color.Transparent;
+            this.lblMenuHistorialVentas.Font = new System.Drawing.Font("Perpetua Titling MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblMenuHistorialVentas.Location = new System.Drawing.Point(12, 21);
             this.lblMenuHistorialVentas.Name = "lblMenuHistorialVentas";
-            this.lblMenuHistorialVentas.Size = new System.Drawing.Size(132, 20);
+            this.lblMenuHistorialVentas.Size = new System.Drawing.Size(289, 28);
             this.lblMenuHistorialVentas.TabIndex = 1;
             this.lblMenuHistorialVentas.Text = "Historial de ventas";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(176, 21);
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuario.Location = new System.Drawing.Point(307, 29);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(50, 20);
+            this.lblUsuario.Size = new System.Drawing.Size(52, 17);
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.Text = "label1";
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(198, 89);
+            this.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscar.Location = new System.Drawing.Point(198, 88);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(121, 31);
+            this.btnBuscar.Size = new System.Drawing.Size(121, 32);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar Venta";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(694, 84);
+            this.btnAtras.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAtras.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAtras.Location = new System.Drawing.Point(694, 88);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(94, 32);
             this.btnAtras.TabIndex = 4;
             this.btnAtras.Text = "Atras";
-            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // txtBuscar
@@ -99,21 +107,25 @@ namespace Login
             // lblAviso
             // 
             this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.Transparent;
+            this.lblAviso.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAviso.Location = new System.Drawing.Point(12, 70);
             this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(50, 20);
+            this.lblAviso.Size = new System.Drawing.Size(52, 17);
             this.lblAviso.TabIndex = 6;
             this.lblAviso.Text = "label1";
             this.lblAviso.Visible = false;
             // 
             // btnFacturacionTotal
             // 
-            this.btnFacturacionTotal.Location = new System.Drawing.Point(325, 90);
+            this.btnFacturacionTotal.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnFacturacionTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFacturacionTotal.Location = new System.Drawing.Point(325, 88);
             this.btnFacturacionTotal.Name = "btnFacturacionTotal";
-            this.btnFacturacionTotal.Size = new System.Drawing.Size(159, 29);
+            this.btnFacturacionTotal.Size = new System.Drawing.Size(159, 31);
             this.btnFacturacionTotal.TabIndex = 7;
             this.btnFacturacionTotal.Text = "Ver Facturacion Total";
-            this.btnFacturacionTotal.UseVisualStyleBackColor = true;
+            this.btnFacturacionTotal.UseVisualStyleBackColor = false;
             this.btnFacturacionTotal.Click += new System.EventHandler(this.btnFacturacionTotal_Click);
             // 
             // FrmHistorialVentas

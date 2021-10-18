@@ -11,7 +11,7 @@ using Entidades;
 
 namespace Login
 {
-    public partial class FrmModicarProducto : Form
+    public partial class FrmModicarProducto : FrmBase
     {
         Usuario auxEmpleado;
         Producto prodAModificar;
@@ -20,7 +20,7 @@ namespace Login
         {
             InitializeComponent();
             auxEmpleado = new Empleado();
-            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
             this.Icon = icono;
         }
 

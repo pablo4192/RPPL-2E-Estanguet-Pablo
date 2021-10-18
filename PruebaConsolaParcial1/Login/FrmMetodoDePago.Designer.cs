@@ -43,9 +43,10 @@ namespace Login
             // chkEfectivo
             // 
             this.chkEfectivo.AutoSize = true;
+            this.chkEfectivo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.chkEfectivo.Location = new System.Drawing.Point(25, 186);
             this.chkEfectivo.Name = "chkEfectivo";
-            this.chkEfectivo.Size = new System.Drawing.Size(84, 24);
+            this.chkEfectivo.Size = new System.Drawing.Size(89, 21);
             this.chkEfectivo.TabIndex = 0;
             this.chkEfectivo.Text = "Efectivo";
             this.chkEfectivo.UseVisualStyleBackColor = true;
@@ -53,9 +54,10 @@ namespace Login
             // chkCuentaCorriente
             // 
             this.chkCuentaCorriente.AutoSize = true;
+            this.chkCuentaCorriente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.chkCuentaCorriente.Location = new System.Drawing.Point(25, 235);
             this.chkCuentaCorriente.Name = "chkCuentaCorriente";
-            this.chkCuentaCorriente.Size = new System.Drawing.Size(142, 24);
+            this.chkCuentaCorriente.Size = new System.Drawing.Size(156, 21);
             this.chkCuentaCorriente.TabIndex = 1;
             this.chkCuentaCorriente.Text = "Cuenta Corriente";
             this.chkCuentaCorriente.UseVisualStyleBackColor = true;
@@ -63,15 +65,17 @@ namespace Login
             // lblMetodoDePago
             // 
             this.lblMetodoDePago.AutoSize = true;
+            this.lblMetodoDePago.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMetodoDePago.Location = new System.Drawing.Point(25, 153);
             this.lblMetodoDePago.Name = "lblMetodoDePago";
-            this.lblMetodoDePago.Size = new System.Drawing.Size(168, 20);
+            this.lblMetodoDePago.Size = new System.Drawing.Size(202, 20);
             this.lblMetodoDePago.TabIndex = 2;
             this.lblMetodoDePago.Text = "Escoja Metodo De Pago";
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(209, 298);
+            this.btnAceptar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAceptar.Location = new System.Drawing.Point(133, 286);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 38);
             this.btnAceptar.TabIndex = 3;
@@ -81,7 +85,8 @@ namespace Login
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(86, 298);
+            this.btnCancelar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.Location = new System.Drawing.Point(25, 286);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 38);
             this.btnCancelar.TabIndex = 4;
@@ -91,31 +96,33 @@ namespace Login
             // lblCostoEnvio
             // 
             this.lblCostoEnvio.AutoSize = true;
-            this.lblCostoEnvio.Location = new System.Drawing.Point(25, 9);
+            this.lblCostoEnvio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCostoEnvio.Location = new System.Drawing.Point(25, 20);
             this.lblCostoEnvio.Name = "lblCostoEnvio";
-            this.lblCostoEnvio.Size = new System.Drawing.Size(114, 20);
+            this.lblCostoEnvio.Size = new System.Drawing.Size(122, 17);
             this.lblCostoEnvio.TabIndex = 5;
             this.lblCostoEnvio.Text = "Costo Del Envio";
             // 
             // lblImporteTotal
             // 
             this.lblImporteTotal.AutoSize = true;
-            this.lblImporteTotal.Location = new System.Drawing.Point(25, 71);
+            this.lblImporteTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblImporteTotal.Location = new System.Drawing.Point(25, 80);
             this.lblImporteTotal.Name = "lblImporteTotal";
-            this.lblImporteTotal.Size = new System.Drawing.Size(99, 20);
+            this.lblImporteTotal.Size = new System.Drawing.Size(105, 17);
             this.lblImporteTotal.TabIndex = 6;
             this.lblImporteTotal.Text = "Importe Total";
             // 
             // txtCostoEnvio
             // 
-            this.txtCostoEnvio.Location = new System.Drawing.Point(25, 32);
+            this.txtCostoEnvio.Location = new System.Drawing.Point(25, 40);
             this.txtCostoEnvio.Name = "txtCostoEnvio";
             this.txtCostoEnvio.Size = new System.Drawing.Size(125, 27);
             this.txtCostoEnvio.TabIndex = 7;
             // 
             // txtImporteTotal
             // 
-            this.txtImporteTotal.Location = new System.Drawing.Point(25, 94);
+            this.txtImporteTotal.Location = new System.Drawing.Point(25, 100);
             this.txtImporteTotal.Name = "txtImporteTotal";
             this.txtImporteTotal.Size = new System.Drawing.Size(125, 27);
             this.txtImporteTotal.TabIndex = 8;
@@ -124,7 +131,9 @@ namespace Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 363);
+            this.BackColor = System.Drawing.Color.Honeydew;
+            this.BackgroundImage = null;
+            this.ClientSize = new System.Drawing.Size(257, 345);
             this.Controls.Add(this.txtImporteTotal);
             this.Controls.Add(this.txtCostoEnvio);
             this.Controls.Add(this.lblImporteTotal);
@@ -137,7 +146,6 @@ namespace Login
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmMetodoDePago";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMetodoDePago";
             this.Load += new System.EventHandler(this.FrmMetodoDePago_Load);
             this.ResumeLayout(false);

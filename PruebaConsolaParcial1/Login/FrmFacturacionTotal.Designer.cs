@@ -59,38 +59,46 @@ namespace Login
             // lblTotalDelMes
             // 
             this.lblTotalDelMes.AutoSize = true;
+            this.lblTotalDelMes.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalDelMes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTotalDelMes.Location = new System.Drawing.Point(12, 83);
             this.lblTotalDelMes.Name = "lblTotalDelMes";
-            this.lblTotalDelMes.Size = new System.Drawing.Size(101, 20);
+            this.lblTotalDelMes.Size = new System.Drawing.Size(109, 17);
             this.lblTotalDelMes.TabIndex = 3;
             this.lblTotalDelMes.Text = "Total del mes:";
             // 
             // lblMonto
             // 
             this.lblMonto.AutoSize = true;
-            this.lblMonto.Location = new System.Drawing.Point(119, 83);
+            this.lblMonto.BackColor = System.Drawing.Color.Transparent;
+            this.lblMonto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMonto.Location = new System.Drawing.Point(129, 83);
             this.lblMonto.Name = "lblMonto";
-            this.lblMonto.Size = new System.Drawing.Size(50, 20);
+            this.lblMonto.Size = new System.Drawing.Size(52, 17);
             this.lblMonto.TabIndex = 4;
             this.lblMonto.Text = "label1";
             this.lblMonto.Visible = false;
             // 
             // btnCalcular
             // 
+            this.btnCalcular.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCalcular.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCalcular.Location = new System.Drawing.Point(203, 44);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(94, 29);
             this.btnCalcular.TabIndex = 5;
             this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.UseVisualStyleBackColor = false;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // lblAviso
             // 
             this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.Transparent;
+            this.lblAviso.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAviso.Location = new System.Drawing.Point(12, 105);
             this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(50, 20);
+            this.lblAviso.Size = new System.Drawing.Size(52, 17);
             this.lblAviso.TabIndex = 6;
             this.lblAviso.Text = "label1";
             this.lblAviso.Visible = false;

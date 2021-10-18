@@ -63,9 +63,39 @@ namespace Login.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap david_clode_Haz8prUXrI4_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("david-clode-Haz8prUXrI4-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FondoApp {
+            get {
+                object obj = ResourceManager.GetObject("FondoApp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imagen1 {
             get {
                 object obj = ResourceManager.GetObject("imagen1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagenFondoBlanco {
+            get {
+                object obj = ResourceManager.GetObject("imagenFondoBlanco", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

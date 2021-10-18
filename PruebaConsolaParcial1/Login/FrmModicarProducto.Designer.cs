@@ -54,28 +54,33 @@ namespace Login
             // lblMenuModificarProducto
             // 
             this.lblMenuModificarProducto.AutoSize = true;
-            this.lblMenuModificarProducto.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMenuModificarProducto.BackColor = System.Drawing.Color.Transparent;
+            this.lblMenuModificarProducto.Font = new System.Drawing.Font("Perpetua Titling MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblMenuModificarProducto.Location = new System.Drawing.Point(12, 0);
             this.lblMenuModificarProducto.Name = "lblMenuModificarProducto";
-            this.lblMenuModificarProducto.Size = new System.Drawing.Size(282, 31);
+            this.lblMenuModificarProducto.Size = new System.Drawing.Size(390, 28);
             this.lblMenuModificarProducto.TabIndex = 0;
             this.lblMenuModificarProducto.Text = "Menu Modificar Producto";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(300, 9);
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuario.Location = new System.Drawing.Point(408, 7);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(50, 20);
+            this.lblUsuario.Size = new System.Drawing.Size(52, 17);
             this.lblUsuario.TabIndex = 1;
             this.lblUsuario.Text = "label2";
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTitulo.Location = new System.Drawing.Point(12, 91);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(349, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(381, 17);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Ingrese solamente los campos que desea modificar";
             // 
@@ -97,7 +102,7 @@ namespace Login
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(564, 131);
+            this.txtPrecio.Location = new System.Drawing.Point(564, 137);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.PlaceholderText = "Campo sin Modificar";
             this.txtPrecio.Size = new System.Drawing.Size(151, 27);
@@ -105,7 +110,7 @@ namespace Login
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(336, 131);
+            this.txtCantidad.Location = new System.Drawing.Point(341, 137);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.PlaceholderText = "Campo sin Modificar";
             this.txtCantidad.Size = new System.Drawing.Size(151, 27);
@@ -115,7 +120,7 @@ namespace Login
             // 
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(336, 168);
+            this.cmbCategoria.Location = new System.Drawing.Point(341, 171);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(151, 28);
             this.cmbCategoria.TabIndex = 7;
@@ -123,77 +128,91 @@ namespace Login
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNombre.Location = new System.Drawing.Point(12, 144);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(64, 20);
+            this.lblNombre.Size = new System.Drawing.Size(66, 17);
             this.lblNombre.TabIndex = 8;
             this.lblNombre.Text = "Nombre";
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
+            this.lblMarca.BackColor = System.Drawing.Color.Transparent;
+            this.lblMarca.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMarca.Location = new System.Drawing.Point(12, 179);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(50, 20);
+            this.lblMarca.Size = new System.Drawing.Size(54, 17);
             this.lblMarca.TabIndex = 9;
             this.lblMarca.Text = "Marca";
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
+            this.lblCantidad.BackColor = System.Drawing.Color.Transparent;
+            this.lblCantidad.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCantidad.Location = new System.Drawing.Point(261, 144);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(69, 20);
+            this.lblCantidad.Size = new System.Drawing.Size(73, 17);
             this.lblCantidad.TabIndex = 10;
             this.lblCantidad.Text = "Cantidad";
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
+            this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.lblCategoria.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCategoria.Location = new System.Drawing.Point(261, 179);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(74, 20);
+            this.lblCategoria.Size = new System.Drawing.Size(80, 17);
             this.lblCategoria.TabIndex = 11;
             this.lblCategoria.Text = "Categoria";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(508, 137);
+            this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrecio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPrecio.Location = new System.Drawing.Point(502, 142);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(50, 20);
+            this.lblPrecio.Size = new System.Drawing.Size(56, 17);
             this.lblPrecio.TabIndex = 12;
             this.lblPrecio.Text = "Precio";
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(709, 164);
+            this.btnModificar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnModificar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnModificar.Location = new System.Drawing.Point(709, 175);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(137, 35);
             this.btnModificar.TabIndex = 13;
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(564, 164);
+            this.btnAtras.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAtras.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAtras.Location = new System.Drawing.Point(564, 175);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(137, 35);
             this.btnAtras.TabIndex = 14;
             this.btnAtras.Text = "Atras";
-            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // dgvListaProductos
             // 
             this.dgvListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaProductos.Location = new System.Drawing.Point(12, 205);
+            this.dgvListaProductos.Location = new System.Drawing.Point(12, 216);
             this.dgvListaProductos.MultiSelect = false;
             this.dgvListaProductos.Name = "dgvListaProductos";
             this.dgvListaProductos.RowHeadersWidth = 51;
             this.dgvListaProductos.RowTemplate.Height = 29;
-            this.dgvListaProductos.Size = new System.Drawing.Size(834, 279);
+            this.dgvListaProductos.Size = new System.Drawing.Size(834, 268);
             this.dgvListaProductos.TabIndex = 15;
             this.dgvListaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaProductos_CellContentClick);
             // 
@@ -207,21 +226,25 @@ namespace Login
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnBuscar.Location = new System.Drawing.Point(213, 46);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(81, 27);
             this.btnBuscar.TabIndex = 18;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblAviso
             // 
             this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.Transparent;
+            this.lblAviso.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAviso.ForeColor = System.Drawing.Color.Red;
             this.lblAviso.Location = new System.Drawing.Point(300, 53);
             this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(50, 20);
+            this.lblAviso.Size = new System.Drawing.Size(52, 17);
             this.lblAviso.TabIndex = 19;
             this.lblAviso.Text = "label1";
             this.lblAviso.Visible = false;
@@ -230,7 +253,6 @@ namespace Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(858, 496);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.btnBuscar);
@@ -252,7 +274,6 @@ namespace Login
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblMenuModificarProducto);
             this.Name = "FrmModicarProducto";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmModicarProducto";
             this.Load += new System.EventHandler(this.FrmModicarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).EndInit();

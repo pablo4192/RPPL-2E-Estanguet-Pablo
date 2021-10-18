@@ -11,7 +11,7 @@ using Entidades;
 
 namespace Login
 {
-    public partial class FrmLogin : Form
+    public partial class FrmLogin : FrmBase
     {
         string usuario;
         string contrasenia;
@@ -19,7 +19,7 @@ namespace Login
         public FrmLogin()
         {
             InitializeComponent();
-            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
             this.Icon = icono;
         }
 
@@ -38,12 +38,12 @@ namespace Login
         {
             try
             {
-                if (Comercio.Loguearse(usuario, contrasenia))
-                {
-                    FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(usuario);
-                    menuPrincipal.Show();
-                    this.Hide();  // O close???
-                }
+                Comercio.Loguearse(usuario, contrasenia);
+                
+                FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(usuario);
+                menuPrincipal.Show();
+                this.Hide();  
+                
                 
             }
             catch(UsuarioInvalidoException usuarioInvalidoExcepcion)

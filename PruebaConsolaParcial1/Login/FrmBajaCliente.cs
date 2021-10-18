@@ -11,7 +11,7 @@ using Entidades;
 
 namespace Login
 {
-    public partial class FrmBajaCliente : Form
+    public partial class FrmBajaCliente : FrmBase
     {
         Usuario auxEmpleado; 
 
@@ -19,7 +19,7 @@ namespace Login
         {
             InitializeComponent();
             auxEmpleado = new Empleado();
-            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
             this.Icon = icono;
         }
         public FrmBajaCliente(string usuario): this()

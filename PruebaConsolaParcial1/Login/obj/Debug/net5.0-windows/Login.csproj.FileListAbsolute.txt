@@ -70,3 +70,5 @@ C:\Users\KIANO\Desktop\Parcial_1_Labo2\PruebaConsolaParcial1\Login\obj\Debug\net
 C:\Users\KIANO\Desktop\Parcial_1_Labo2\PruebaConsolaParcial1\Login\obj\Debug\net5.0-windows\Login.FrmVentaPorCliente.resources
 C:\Users\KIANO\Desktop\Parcial_1_Labo2\PruebaConsolaParcial1\Login\obj\Debug\net5.0-windows\Login.FrmFacturacionTotal.resources
 C:\Users\KIANO\Desktop\Parcial_1_Labo2\PruebaConsolaParcial1\Login\obj\Debug\net5.0-windows\Login.FrmMetodoDePago.resources
+C:\Users\KIANO\Desktop\Parcial_1_Labo2\PruebaConsolaParcial1\Login\obj\Debug\net5.0-windows\Login.FrmBase.resources
+C:\Users\KIANO\Desktop\Parcial_1_Labo2\PruebaConsolaParcial1\Login\obj\Debug\net5.0-windows\Login.FrmBaseAbm.resources

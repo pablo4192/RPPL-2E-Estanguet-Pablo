@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 using Entidades;
 
 namespace Login
 {
-    public partial class FrmVentas : Form
+    public partial class FrmVentas : FrmBase
     {
         Stack<Producto> auxPilaProductos;
 
@@ -28,7 +29,7 @@ namespace Login
         private FrmVentas()
         {
             InitializeComponent();
-            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
             this.Icon = icono;
 
         }
@@ -67,6 +68,8 @@ namespace Login
                                 lblAviso.ForeColor = Color.Green;
                                 lblAviso.Text = "Venta exitosa!";
                                 auxPilaProductos.Clear();
+                                SoundPlayer sonidoVentaExitosa = new SoundPlayer(@"Sonido\cajaRegistradora.wav");
+                                sonidoVentaExitosa.Play();
                                 Limpiar();
                             }
                             else
@@ -95,6 +98,8 @@ namespace Login
                         lblAviso.ForeColor = Color.Green;
                         lblAviso.Text = "Venta exitosa!";
                         auxPilaProductos.Clear();
+                        SoundPlayer sonidoVentaExitosa = new SoundPlayer(@"Sonido\cajaRegistradora.wav");
+                        sonidoVentaExitosa.Play();
                         Limpiar();
                     }
                     else

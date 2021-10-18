@@ -11,14 +11,14 @@ using Entidades;
 
 namespace Login
 {
-    public partial class FrmProductos : Form
+    public partial class FrmProductos : FrmBaseAbm
     {
         
 
         private FrmProductos()
         {
             InitializeComponent();
-            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
             this.Icon = icono;
         }
 
@@ -32,39 +32,39 @@ namespace Login
             dgvListaProductos.DataSource = Comercio.ListaProductos;
         }
 
-        private void btnAltaProducto_Click(object sender, EventArgs e)
+       
+        private void btnAlta_Click_1(object sender, EventArgs e)
         {
             FrmAltaProducto frmAltaProducto = new FrmAltaProducto(lblDatosUsuario.Text);
             frmAltaProducto.Show();
             this.Hide();
         }
 
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal(lblDatosUsuario.Text);
-            frmMenuPrincipal.Show();
-            
-        }
-
-        private void btnBajaProducto_Click(object sender, EventArgs e)
-        {
-            FrmBajaProducto frmBajaProducto = new FrmBajaProducto(lblDatosUsuario.Text);
-            frmBajaProducto.Show();
-            this.Hide();
-        }
-
-        private void btnModificarProducto_Click(object sender, EventArgs e)
+        private void btnModificar_Click_1(object sender, EventArgs e)
         {
             FrmModicarProducto frmModificar = new FrmModicarProducto(lblDatosUsuario.Text);
             frmModificar.Show();
             this.Hide();
         }
 
-        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        private void btnBaja_Click_1(object sender, EventArgs e)
+        {
+            FrmBajaProducto frmBajaProducto = new FrmBajaProducto(lblDatosUsuario.Text);
+            frmBajaProducto.Show();
+            this.Hide();
+        }
+
+        private void btnAtras_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmMenuPrincipal frmMenuPrincipal = new FrmMenuPrincipal(lblDatosUsuario.Text);
+            frmMenuPrincipal.Show();
+        }
+
+        private void btnBuscar_Click_1(object sender, EventArgs e)
         {
             Producto producto = Comercio.BuscarProducto(txtBuscarProducto.Text);
-            if(producto != null)
+            if (producto != null)
             {
                 lblAviso.Visible = false;
                 lblDatosProducto.Visible = true;

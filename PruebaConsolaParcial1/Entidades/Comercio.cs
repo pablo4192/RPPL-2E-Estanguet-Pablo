@@ -78,22 +78,26 @@ namespace Entidades
             listaProductos.Add(unProducto);
         }
 
-        public static bool Loguearse(string usuario, string contrasenia)
+        public static void Loguearse(string usuario, string contrasenia)
         {
+            bool flag = false;
+
             foreach (KeyValuePair<int, Empleado> item in listaEmpleados)
             {
                 if (item.Key.ToString() == contrasenia && item.Value.Usuario == usuario)
                 {
-                    return true;
-                }
-                else 
-                {
-                    UsuarioInvalidoException usuarioInvalidoExcepcion = new UsuarioInvalidoException();
-                    throw usuarioInvalidoExcepcion;
+                    flag = true;
                 }
             }
-
-            return false;
+            
+            if(!flag)
+            {
+                UsuarioInvalidoException usuarioInvalidoExcepcion = new UsuarioInvalidoException();
+                throw usuarioInvalidoExcepcion;
+            }
+            
+            
+           
         }
             
         public static bool ValidarProducto(string nombre, string marca, string cantidad, string categoria, string precio)

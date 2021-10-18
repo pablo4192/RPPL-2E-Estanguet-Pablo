@@ -11,18 +11,21 @@ using Entidades;
 
 namespace Login
 {
-    public partial class FrmMenuPrincipal : Form
+    public partial class FrmMenuPrincipal : FrmBase
     {
+        
+       
         private FrmMenuPrincipal()
         {
             InitializeComponent();
-            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
             this.Icon = icono;
         }
 
         public FrmMenuPrincipal(string usuario): this()
         {
             this.lblDatosUsuario.Text = usuario;
+            
         }
 
         private void btnNuevaVenta_Click(object sender, EventArgs e)
@@ -66,6 +69,9 @@ namespace Login
             {
                 this.btnEmpleados.Enabled = false;
             }
+            
+            
+            
         }
 
         private void btnHistorialVentas_Click(object sender, EventArgs e)
@@ -75,6 +81,11 @@ namespace Login
             this.Hide();
         }
 
-        
+        //public override void DarkMode()
+        //{
+            
+        //}
+
+
     }
 }

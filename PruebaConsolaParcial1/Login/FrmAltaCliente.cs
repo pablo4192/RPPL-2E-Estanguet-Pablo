@@ -11,7 +11,7 @@ using Entidades;
 
 namespace Login
 {
-    public partial class FrmAltaCliente : Form
+    public partial class FrmAltaCliente : FrmBase
     {
         Empleado auxEmpleado;
         Administrador auxAdmi;
@@ -22,8 +22,9 @@ namespace Login
             InitializeComponent();
             auxEmpleado = new Empleado();
             auxAdmi = new Administrador();
-            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
             this.Icon = icono;
+
         }
 
         public FrmAltaCliente(string usuario):this()
@@ -44,7 +45,7 @@ namespace Login
             if(Comercio.VerificarAdministrador(lblUsuario.Text))
             {
                 chkPoseeCuenta.Enabled = true;
-                this.txtSaldo.Enabled = true;
+                
                 esAdministrador = true;
             }
         }
@@ -98,6 +99,21 @@ namespace Login
             txtNombre.Text = string.Empty;
             txtApellido.Text = string.Empty;
             txtCuit.Text = string.Empty;
+            
+        }
+
+        
+        private void chkPoseeCuenta_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkPoseeCuenta.Checked)
+            {
+                this.txtSaldo.Enabled = true;
+            }
+            else
+            {
+                this.txtSaldo.Enabled = false;
+                this.txtSaldo.Text = "0";
+            }
             
         }
     }

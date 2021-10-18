@@ -62,27 +62,33 @@ namespace Login
             // lblVentasCliente
             // 
             this.lblVentasCliente.AutoSize = true;
+            this.lblVentasCliente.BackColor = System.Drawing.Color.Transparent;
+            this.lblVentasCliente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblVentasCliente.Location = new System.Drawing.Point(12, 21);
             this.lblVentasCliente.Name = "lblVentasCliente";
-            this.lblVentasCliente.Size = new System.Drawing.Size(233, 20);
+            this.lblVentasCliente.Size = new System.Drawing.Size(258, 17);
             this.lblVentasCliente.TabIndex = 2;
             this.lblVentasCliente.Text = "Compras realizadas por el cliente:";
             // 
             // lblDatosCliente
             // 
             this.lblDatosCliente.AutoSize = true;
+            this.lblDatosCliente.BackColor = System.Drawing.Color.Transparent;
+            this.lblDatosCliente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDatosCliente.Location = new System.Drawing.Point(12, 55);
             this.lblDatosCliente.Name = "lblDatosCliente";
-            this.lblDatosCliente.Size = new System.Drawing.Size(50, 20);
+            this.lblDatosCliente.Size = new System.Drawing.Size(52, 17);
             this.lblDatosCliente.TabIndex = 3;
             this.lblDatosCliente.Text = "label1";
             // 
             // lblListaProductos
             // 
             this.lblListaProductos.AutoSize = true;
+            this.lblListaProductos.BackColor = System.Drawing.Color.Transparent;
+            this.lblListaProductos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblListaProductos.Location = new System.Drawing.Point(12, 239);
             this.lblListaProductos.Name = "lblListaProductos";
-            this.lblListaProductos.Size = new System.Drawing.Size(256, 20);
+            this.lblListaProductos.Size = new System.Drawing.Size(278, 17);
             this.lblListaProductos.TabIndex = 4;
             this.lblListaProductos.Text = "Listado productos vendidos al cliente";
             // 

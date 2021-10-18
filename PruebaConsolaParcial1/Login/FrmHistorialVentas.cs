@@ -11,7 +11,7 @@ using Entidades;
 
 namespace Login
 {
-    public partial class FrmHistorialVentas : Form
+    public partial class FrmHistorialVentas : FrmBase
     {
 
         List<Venta> auxListaVentas;
@@ -19,7 +19,7 @@ namespace Login
         public FrmHistorialVentas()
         {
             InitializeComponent();
-            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
+            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
             this.Icon = icono;
         }
 

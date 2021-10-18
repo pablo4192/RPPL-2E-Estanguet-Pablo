@@ -41,6 +41,8 @@ namespace Login
             // 
             // txtUsuario
             // 
+            this.txtUsuario.BackColor = System.Drawing.Color.MintCream;
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Location = new System.Drawing.Point(272, 157);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.PlaceholderText = "Ingrese usuario";
@@ -50,6 +52,7 @@ namespace Login
             // 
             // txtContraseña
             // 
+            this.txtContraseña.BackColor = System.Drawing.Color.MintCream;
             this.txtContraseña.Location = new System.Drawing.Point(272, 232);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PlaceholderText = "Ingrese contraseña";
@@ -60,67 +63,79 @@ namespace Login
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(191, 160);
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuario.Location = new System.Drawing.Point(167, 167);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(59, 20);
+            this.lblUsuario.Size = new System.Drawing.Size(64, 17);
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.Text = "Usuario";
             // 
             // lblContrasenia
             // 
             this.lblContrasenia.AutoSize = true;
-            this.lblContrasenia.Location = new System.Drawing.Point(167, 232);
+            this.lblContrasenia.BackColor = System.Drawing.Color.Transparent;
+            this.lblContrasenia.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblContrasenia.Location = new System.Drawing.Point(162, 237);
             this.lblContrasenia.Name = "lblContrasenia";
-            this.lblContrasenia.Size = new System.Drawing.Size(83, 20);
+            this.lblContrasenia.Size = new System.Drawing.Size(88, 17);
             this.lblContrasenia.TabIndex = 3;
             this.lblContrasenia.Text = "Contraseña";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNombre.Location = new System.Drawing.Point(257, 79);
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.Font = new System.Drawing.Font("Perpetua Titling MT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNombre.Location = new System.Drawing.Point(173, 85);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(256, 31);
+            this.lblNombre.Size = new System.Drawing.Size(340, 28);
             this.lblNombre.TabIndex = 4;
             this.lblNombre.Text = "Bienvenido a Cachogos";
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(417, 311);
+            this.btnIngresar.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnIngresar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnIngresar.Location = new System.Drawing.Point(417, 303);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(96, 63);
+            this.btnIngresar.Size = new System.Drawing.Size(96, 71);
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // btnAutoCompletar
             // 
-            this.btnAutoCompletar.Location = new System.Drawing.Point(106, 303);
+            this.btnAutoCompletar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnAutoCompletar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAutoCompletar.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnAutoCompletar.Location = new System.Drawing.Point(140, 303);
             this.btnAutoCompletar.Name = "btnAutoCompletar";
-            this.btnAutoCompletar.Size = new System.Drawing.Size(144, 71);
+            this.btnAutoCompletar.Size = new System.Drawing.Size(133, 71);
             this.btnAutoCompletar.TabIndex = 6;
             this.btnAutoCompletar.Text = "AutoCompletar Empleado";
-            this.btnAutoCompletar.UseVisualStyleBackColor = true;
+            this.btnAutoCompletar.UseVisualStyleBackColor = false;
             this.btnAutoCompletar.Click += new System.EventHandler(this.btnAutoCompletar_Click);
             // 
             // btnCompAdm
             // 
-            this.btnCompAdm.Location = new System.Drawing.Point(257, 303);
+            this.btnCompAdm.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnCompAdm.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCompAdm.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnCompAdm.Location = new System.Drawing.Point(279, 303);
             this.btnCompAdm.Name = "btnCompAdm";
-            this.btnCompAdm.Size = new System.Drawing.Size(144, 71);
+            this.btnCompAdm.Size = new System.Drawing.Size(132, 71);
             this.btnCompAdm.TabIndex = 7;
             this.btnCompAdm.Text = "AutoCompletar Administrador";
-            this.btnCompAdm.UseVisualStyleBackColor = true;
+            this.btnCompAdm.UseVisualStyleBackColor = false;
             this.btnCompAdm.Click += new System.EventHandler(this.btnCompAdm_Click);
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(747, 460);
+            this.ClientSize = new System.Drawing.Size(696, 454);
             this.Controls.Add(this.btnCompAdm);
             this.Controls.Add(this.btnAutoCompletar);
             this.Controls.Add(this.btnIngresar);
@@ -130,7 +145,6 @@ namespace Login
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.Name = "FrmLogin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -11,7 +11,7 @@ using Entidades;
 
 namespace Login
 {
-    public partial class FrmMetodoDePago : Form
+    public partial class FrmMetodoDePago : FrmBase
     {
         string importe;
         int cantidadItems;
@@ -29,13 +29,14 @@ namespace Login
         public FrmMetodoDePago(string importe, int cantidadItems, bool conEnvio)
         {
             InitializeComponent();
+            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
+            this.Icon = icono;
             this.importe = importe;
             this.cantidadItems = cantidadItems;
             this.conEnvio = conEnvio;
 
 
-            Icon icono = new Icon(Application.StartupPath + @"\Iconos\iconoPerro.ico");
-            this.Icon = icono;
+            
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
