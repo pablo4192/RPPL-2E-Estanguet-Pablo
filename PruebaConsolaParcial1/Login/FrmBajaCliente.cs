@@ -19,7 +19,6 @@ namespace Login
         {
             InitializeComponent();
             auxEmpleado = new Empleado();
-            
         }
         public FrmBajaCliente(string usuario): this()
         {

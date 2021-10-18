@@ -16,7 +16,6 @@ namespace Login
         public FrmConfirmaBaja()
         {
             InitializeComponent();
-           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

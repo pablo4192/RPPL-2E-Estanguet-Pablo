@@ -17,8 +17,6 @@ namespace Entidades
 
         static int ultimoNumeroCliente;
 
-        
-
         static Cliente()
         {
             ultimoNumeroCliente = 0;
@@ -40,7 +38,6 @@ namespace Entidades
             
         }
 
-        //Constructor cliente por defecto
         public Cliente(string nombre, string apellido, string cuit, int numeroCliente, bool poseeCuenta, float saldo)
         {
             this.nombre = nombre;
@@ -55,21 +52,41 @@ namespace Entidades
         public string Nombre
         {
             get { return nombre; }
-            set { nombre = value; }
+            set 
+            { 
+                if(!string.IsNullOrEmpty(nombre))
+                {
+                    nombre = value;
+                }
+                    
+            }
         }
 
         public string Apellido
         {
             get { return apellido; }
-            set { apellido = value; }
+            set 
+            {
+                if(!string.IsNullOrEmpty(apellido))
+                {
+                    apellido = value;
+                }
+                
+            }
         }
 
         public string Cuit
         {
             get { return cuit; }
-            set { cuit = value; }
+            set 
+            { 
+                if(!string.IsNullOrEmpty(cuit))
+                {
+                    cuit = value;
+                }
+                
+            }
         }
-
 
         public int NumeroCliente
         {
@@ -79,7 +96,10 @@ namespace Entidades
         public bool PoseeCuenta
         {
             get { return poseeCuenta; }
-            set { poseeCuenta = value; }
+            set 
+            { 
+                poseeCuenta = value; 
+            }
         }
 
         public float Saldo
@@ -87,10 +107,19 @@ namespace Entidades
             get { return saldo; }
             set 
             { 
-                saldo = value; 
+                if(value > -1)
+                {
+                    saldo = value;
+                }
+                
             }
         }
 
+        /// <summary>
+        /// Arma un string con los datos del cliente.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>String con los datos del cliente.</returns>
         public static string DatosClienteToString(int key)
         {
             return $"{Comercio.ListaClientes[key].Nombre} {Comercio.ListaClientes[key].Apellido}, Cuit: {Comercio.ListaClientes[key].Cuit}, Posee Cuenta: {Comercio.ListaClientes[key].PoseeCuenta}, Saldo: {Comercio.ListaClientes[key].Saldo}";

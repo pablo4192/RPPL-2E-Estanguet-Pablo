@@ -19,7 +19,6 @@ namespace Login
         {
             InitializeComponent();
             listaDelMes = new List<Venta>();
-           
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)

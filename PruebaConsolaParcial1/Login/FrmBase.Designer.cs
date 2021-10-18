@@ -36,7 +36,7 @@ namespace Login
             // 
             // tmrDesloguear
             // 
-            this.tmrDesloguear.Interval = 20000;
+            this.tmrDesloguear.Interval = 10000;
             this.tmrDesloguear.Tick += new System.EventHandler(this.tmrDesloguear_Tick);
             // 
             // FrmBase

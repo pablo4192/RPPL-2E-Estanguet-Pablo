@@ -32,7 +32,15 @@ namespace Entidades
             get { return claveAdm; }
         }
 
-        //Metodos Empleados
+        /// <summary>
+        /// Da de alta un empleado y lo agrega en la lista de empleados del comercio.
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
+        /// <param name="usuario"></param>
+        /// <param name="sueldo"></param>
+        /// <returns>True si dio de alta al empleado, False si no pudo dar de alta.</returns>
         public static bool AltaEmpleado(string nombre, string apellido, string dni,string usuario, string sueldo)
         {
             float sueldoFloat;
@@ -63,6 +71,16 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Modifica datos de un empleado especifico.
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
+        /// <param name="usuario"></param>
+        /// <param name="sueldo"></param>
+        /// <param name="legajo"></param>
+        /// <returns>True si modifico algun atributo del empleado, False si no se pudo modificar.</returns>
         public static bool ModificarEmpleado(string nombre, string apellido, string dni, string usuario, string sueldo, string legajo)
         {
             Empleado empleadoAModificar;
@@ -90,6 +108,11 @@ namespace Entidades
             return false;
         }
     
+        /// <summary>
+        /// Elimina un empleado de la lista de empleados del comercio.
+        /// </summary>
+        /// <param name="legajo"></param>
+        /// <returns>True si pudo eliminar el empleado, False si no pudo eliminar al empleado.</returns>
         public static bool EliminarEmpleado(string legajo)
         {
             int legajoInt;
@@ -109,7 +132,16 @@ namespace Entidades
             return false;
         }
 
-        //Metodo Alta Cliente heredado de usuario con modificacion en asignar cuenta corriente y saldo 
+        
+        /// <summary>
+        /// Da de alta un cliente, al ser administrador puede asignar cuenta corriente y saldo.
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="cuit"></param>
+        /// <param name="poseeCuenta"></param>
+        /// <param name="saldo"></param>
+        /// <returns>True si pudo dar de alta al cliente, False si no pudo dar de alta al cliente.</returns>
         public new bool AltaCliente(string nombre, string apellido, string cuit, bool poseeCuenta, string saldo)
         {
             Cliente nuevoCliente;
@@ -133,6 +165,11 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Arma un string con los datos de un empleado, al ser administrador muestra atributos del mismo que no posee un empleado.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>String con los datos del administrador</returns>
         public override string DatosEmpleadoToString(int key)
         {
             string datos;

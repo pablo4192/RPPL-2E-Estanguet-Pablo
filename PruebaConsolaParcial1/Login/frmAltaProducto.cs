@@ -19,7 +19,6 @@ namespace Login
         {
             InitializeComponent();
             auxEmpleado = new Empleado();
-           
         }
 
         public FrmAltaProducto(string usuario): this()

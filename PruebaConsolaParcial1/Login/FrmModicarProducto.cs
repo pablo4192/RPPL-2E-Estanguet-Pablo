@@ -20,7 +20,6 @@ namespace Login
         {
             InitializeComponent();
             auxEmpleado = new Empleado();
-         
         }
 
         public FrmModicarProducto(string usuario): this()
@@ -95,7 +94,6 @@ namespace Login
                 lblAviso.Text = "Producto Modificado";
             }
         }
-
 
         private bool ModificarProducto(Producto unProducto)
         {

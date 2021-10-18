@@ -18,7 +18,6 @@ namespace Login
         private FrmEmpleados()
         {
             InitializeComponent();
-            
         }
 
         public FrmEmpleados(string usuario): this()
@@ -26,14 +25,10 @@ namespace Login
             lblUsuario.Text = usuario;
         }
 
-       
-
         private void FrmEmpleados_Load(object sender, EventArgs e)
         {
             dgvListaEmpleados.DataSource = Comercio.ListaEmpleados.Values.ToArray();
         }
-
-       
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -53,12 +48,6 @@ namespace Login
             }
         }
 
-       
-
-     
-
-       
-
         public void Limpiar()
         {
             txtNombre.Text = string.Empty;
@@ -68,8 +57,6 @@ namespace Login
             txtSueldo.Text = string.Empty;
             txtDatosEmpleado.Text = string.Empty;
         }
-
-      
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {

@@ -19,7 +19,6 @@ namespace Login
         public FrmHistorialVentas()
         {
             InitializeComponent();
-           
         }
 
         public FrmHistorialVentas(string usuario): this()

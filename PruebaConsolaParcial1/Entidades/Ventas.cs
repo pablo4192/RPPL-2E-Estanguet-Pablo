@@ -37,36 +37,43 @@ namespace Entidades
             this.importe = importe;
         }
 
-        
-
         public int NumeroCompra
         {
             get { return numeroCompra; }
             
         }
 
-
         public Stack<Producto> Productos
         {
             get { return productos; }
         }
+
         public int Cliente
         {
             get { return cliente; }
         }
+
         public string Vendedor
         {
             get { return vendedor; }
         }
+
         public DateTime FechaCompra
         {
             get { return fechaCompra; }
         }
+
         public float Importe
         {
             get { return importe; }
         }
 
+        //Sobrecarga de conversor explicito.
+
+        /// <summary>
+        /// Crea una lista de productos a partir una venta.
+        /// </summary>
+        /// <param name="unaVenta"></param>
         public static explicit operator List<Producto> (Venta unaVenta)
         {
             List<Producto> listaProductos = unaVenta.productos.ToList();

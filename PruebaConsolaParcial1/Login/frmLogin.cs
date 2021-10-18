@@ -11,7 +11,7 @@ using Entidades;
 
 namespace Login
 {
-    public partial class FrmLogin : FrmBase
+    public partial class FrmLogin : Form
     {
         string usuario;
         string contrasenia;
@@ -19,7 +19,6 @@ namespace Login
         public FrmLogin()
         {
             InitializeComponent();
-            
         }
 
 

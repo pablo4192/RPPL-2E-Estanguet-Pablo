@@ -14,7 +14,6 @@ namespace Login
     public partial class FrmProductos : FrmBaseAbm
     {
         
-
         private FrmProductos()
         {
             InitializeComponent();
@@ -31,7 +30,6 @@ namespace Login
             dgvListaProductos.DataSource = Comercio.ListaProductos;
         }
 
-       
         private void btnAlta_Click_1(object sender, EventArgs e)
         {
             FrmAltaProducto frmAltaProducto = new FrmAltaProducto(lblDatosUsuario.Text);

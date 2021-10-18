@@ -22,8 +22,6 @@ namespace Login
             InitializeComponent();
             auxEmpleado = new Empleado();
             auxAdmi = new Administrador();
-            
-
         }
 
         public FrmAltaCliente(string usuario):this()
@@ -101,7 +99,6 @@ namespace Login
             
         }
 
-        
         private void chkPoseeCuenta_CheckedChanged(object sender, EventArgs e)
         {
             if(chkPoseeCuenta.Checked)

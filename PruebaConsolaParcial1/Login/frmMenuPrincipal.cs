@@ -13,18 +13,14 @@ namespace Login
 {
     public partial class FrmMenuPrincipal : FrmBase
     {
-        
-       
         private FrmMenuPrincipal()
         {
             InitializeComponent();
-            
         }
 
         public FrmMenuPrincipal(string usuario): this()
         {
             this.lblDatosUsuario.Text = usuario;
-            
         }
 
         private void btnNuevaVenta_Click(object sender, EventArgs e)
@@ -79,12 +75,6 @@ namespace Login
             frmHistorial.Show();
             this.Hide();
         }
-
-        //public override void DarkMode()
-        //{
-            
-        //}
-
 
     }
 }

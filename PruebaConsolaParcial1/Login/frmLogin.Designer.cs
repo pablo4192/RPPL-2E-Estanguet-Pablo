@@ -29,6 +29,7 @@ namespace Login
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -135,6 +136,8 @@ namespace Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Login.Properties.Resources.FondoApp;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(696, 454);
             this.Controls.Add(this.btnCompAdm);
             this.Controls.Add(this.btnAutoCompletar);
@@ -144,6 +147,7 @@ namespace Login
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.Text = "Login";
             this.ResumeLayout(false);

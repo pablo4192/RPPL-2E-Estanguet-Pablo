@@ -30,7 +30,6 @@ namespace Entidades
             hardcodeo.CrearVentas();
         }
 
-        
         public static string Nombre
         {
             get { return nombre; }
@@ -40,8 +39,6 @@ namespace Entidades
         public static List<Producto> ListaProductos
         {
             get { return listaProductos; }
-            
-            
         }
 
         public static Dictionary<int, Cliente> ListaClientes
@@ -61,23 +58,39 @@ namespace Entidades
             
         }
 
-
+        /// <summary>
+        /// Agrega un Empleado a la lista de empleados del comercio
+        /// </summary>
+        /// <param name="unEmpleado"></param>
         public static void AgregarEmpleado(Empleado unEmpleado)
         {
             listaEmpleados.Add(unEmpleado.Legajo, unEmpleado);
             
         }
-
+        
+        /// <summary>
+        /// Agrega un cliente a la lista de clientes del comercio.
+        /// </summary>
+        /// <param name="unCliente"></param>
         public static void AgregarCliente(Cliente unCliente)
         {
             listaClientes.Add(unCliente.NumeroCliente, unCliente);
         }
 
+        /// <summary>
+        /// Agrega un producto a la lista de productos del comercio.
+        /// </summary>
+        /// <param name="unProducto"></param>
         public static void AgregarProducto(Producto unProducto)
         {
             listaProductos.Add(unProducto);
         }
 
+        /// <summary>
+        /// Verifica si el usuario y contraseña ingresados pertenecen a un empleado del comercio.
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="contrasenia"></param>
         public static void Loguearse(string usuario, string contrasenia)
         {
             bool flag = false;
@@ -100,6 +113,15 @@ namespace Entidades
            
         }
             
+        /// <summary>
+        /// Valida los datos con los que se va a instanciar un producto.
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="marca"></param>
+        /// <param name="cantidad"></param>
+        /// <param name="categoria"></param>
+        /// <param name="precio"></param>
+        /// <returns>True si los datos son aptos, false si no son aptos para crear uin producto.</returns>
         public static bool ValidarProducto(string nombre, string marca, string cantidad, string categoria, string precio)
         {
             float precioFloat;
@@ -118,6 +140,15 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Valida los datos con los que se va a instanciar un cliente.
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="cuit"></param>
+        /// <param name="poseeCuenta"></param>
+        /// <param name="saldo"></param>
+        /// <returns>True si los datos son aptos, false si los datos no son aptos para crear un cliente.</returns>
         public static bool ValidarCliente(string nombre, string apellido, string cuit, bool poseeCuenta, string saldo)
         {
             float saldoFloat;
@@ -149,6 +180,11 @@ namespace Entidades
             return false;
         }
         
+        /// <summary>
+        /// Busca un producto determinado en la lista de productos del comercio.
+        /// </summary>
+        /// <param name="codProducto"></param>
+        /// <returns>El producto de la lista que coincide con el buscado, null si no se encontro el producto en la lista.</returns>
         public static Producto BuscarProducto(string codProducto)
         {
             int codInt;
@@ -167,6 +203,11 @@ namespace Entidades
             return null;
         }
 
+        /// <summary>
+        /// Verifica si el usuario pasado por parametro pertenece a un administrador.
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns>True si el empleado es administrador, false si no lo es.</returns>
         public static bool VerificarAdministrador(string usuario)
         {
             if(!string.IsNullOrEmpty(usuario))
@@ -186,6 +227,11 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Busca un empleado en la lista de empleados del comercio.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>El empleado de la lista que coincide con el empleado buscado, null si no se encontro el empleado en la lista.</returns>
         public static Empleado BuscarEmpleado(string key)
         {
             int keyInt;
@@ -200,6 +246,11 @@ namespace Entidades
             return null;
         }
 
+        /// <summary>
+        /// Busca un cliente en la lista de clientes del comercio.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>El cliente de la lista que coincide con el cliente buscado, null si no se encontro el cliente en la lista.</returns>
         public static Cliente BuscarCliente(string key)
         {
             int keyInt;
@@ -214,6 +265,15 @@ namespace Entidades
             return null;
         }
 
+        /// <summary>
+        /// Valida los datos con los que se va a instanciar un empleado.
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
+        /// <param name="usuario"></param>
+        /// <param name="sueldo"></param>
+        /// <returns>True si los datos son aptos para crear un empleado, false si los dastos no son aptos.</returns>
         public static bool ValidarEmpleado(string nombre, string apellido, string dni, string usuario, string sueldo)
         {
             int dniInt;
@@ -249,6 +309,11 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Calcula el importe segun precio y cantidad del producto pasado por parametro.
+        /// </summary>
+        /// <param name="unProducto"></param>
+        /// <returns>Importe resultado de la operacion precio * cantidad.</returns>
         public static float CalcularImporte(Producto unProducto)
         {
             float importeTotal = 0;
@@ -260,6 +325,13 @@ namespace Entidades
             return importeTotal;
         }
 
+        /// <summary>
+        /// Valida los datos con los que se va a instanciar una venta.
+        /// </summary>
+        /// <param name="numeroCliente"></param>
+        /// <param name="codigoProducto"></param>
+        /// <param name="cantidad"></param>
+        /// <returns>True si los datos son aptos para crear una venta, false si los datos no son aptos.</returns>
         public static bool ValidarDatosVenta(string numeroCliente, string codigoProducto, string cantidad)
         {
             int cantidadInt;
@@ -276,6 +348,12 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Verifica si el stock del producto es suficiente para hacer la venta y actualiza la cantidad del producto en la lista.
+        /// </summary>
+        /// <param name="unProducto"></param>
+        /// <param name="cantidad"></param>
+        /// <returns>True si hay stock disponible y se actualizo la cantidad, false si no hay suficiente stock.</returns>
         public static bool VerificarStockProducto(Producto unProducto, int cantidad)
         {
             foreach (Producto item in listaProductos)
@@ -294,6 +372,11 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Actualiza la cantidad del producto eliminado del carrito de compras.
+        /// </summary>
+        /// <param name="unProducto"></param>
+        /// <returns>True si actualizo la cantidad, false si no la actualizo.</returns>
         public static bool ActualizarProducto(Producto unProducto)
         {
             foreach (Producto item in listaProductos)
@@ -308,6 +391,11 @@ namespace Entidades
             return false;
         }
        
+        /// <summary>
+        /// Busca las ventas de un cliente determinado en la lista de ventas del comercio.
+        /// </summary>
+        /// <param name="numeroCliente"></param>
+        /// <returns>Lista de ventas del cliente, null si el cliente no tiene ventas.</returns>
         public static List<Venta> BuscarVentasPorCliente(string numeroCliente)
         {
             int numeroClienteInt;
@@ -338,6 +426,12 @@ namespace Entidades
             
         }
 
+        /// <summary>
+        /// Calcula el importe de las ventas echas en un mes determinado.
+        /// </summary>
+        /// <param name="mes"></param>
+        /// <param name="facturacion"></param>
+        /// <returns>Lista de ventas echas en el mes, null si no hay ventas</returns>
         public static List<Venta> CalcularFacturacionMes(string mes, out double facturacion)
         {
             int mesInt;
@@ -363,7 +457,12 @@ namespace Entidades
 
         }
 
-        
+        /// <summary>
+        /// Valida si el cliente tiene saldo disponible en su cuenta para realizar una compra y actualiza su saldo.
+        /// </summary>
+        /// <param name="numeroCliente"></param>
+        /// <param name="importe"></param>
+        /// <returns>True si el cliente tiene saldo suficiente, false si el saldo es insuficiente.</returns>
         public static bool ValidarVenta(string numeroCliente, string importe)
         {
             float importeFloat;
@@ -384,6 +483,12 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Verifica si contraseña y usuario del empleado coinciden entre si con las del empleado de la lista del comercio.
+        /// </summary>
+        /// <param name="legajo"></param>
+        /// <param name="usuario"></param>
+        /// <returns>True si contraseña y usuario coinciden, False si no coinciden.</returns>
         public static bool VerificarUsuario(string legajo, string usuario)
         {
             int legajoInt;
@@ -403,6 +508,13 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Calcula el costo del envio de un producto y el importe total de la compra.
+        /// </summary>
+        /// <param name="importeCompra"></param>
+        /// <param name="cantidadItems"></param>
+        /// <param name="costoEnvio"></param>
+        /// <returns>Importe total, envio incluido, de la compra; y costo de envio en variable out.</returns>
         public static float CalcularEnvio(string importeCompra, int cantidadItems, out float costoEnvio)
         {
             Random kmsRandom = new Random();

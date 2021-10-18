@@ -22,9 +22,7 @@ namespace Login
         public float ImporteTotal
         {
             get { return importeTotal; }
-           
         }
-
 
         public FrmMetodoDePago(string importe, int cantidadItems, bool conEnvio)
         {
@@ -33,9 +31,6 @@ namespace Login
             this.importe = importe;
             this.cantidadItems = cantidadItems;
             this.conEnvio = conEnvio;
-
-
-            
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

@@ -16,7 +16,6 @@ namespace Entidades
         float precio;
 
         static int ProximoCodigoProd;
-
         static Producto()
         {
             ProximoCodigoProd = 2000;
@@ -37,7 +36,6 @@ namespace Entidades
             this.precio = precio;
         }
 
-        //Para crear un producto para agregar al carrito con el codigo correspondiente pero con otra cantidad
         public Producto(string nombre, string marca, int cantidad, string categoria, float precio, int codigoProd)
         {
             this.nombre = nombre;
@@ -57,39 +55,87 @@ namespace Entidades
         public string Nombre
         {
             get { return nombre; }
-            set { nombre = value; }
+
+            set 
+            { 
+                if(!string.IsNullOrEmpty(nombre))
+                {
+                    nombre = value;
+                }
+                
+            }
         }
 
         public string Marca
         {
             get { return marca; }
-            set { marca = value; }
+            set 
+            { 
+                if(!string.IsNullOrEmpty(marca))
+                {
+                    marca = value;
+                }
+                 
+            }
         }
 
         public int Cantidad
         {
             get { return cantidad; }
-            set { cantidad = value; }
+            set 
+            { 
+                if(cantidad > -1)
+                {
+                    cantidad = value;
+                }
+                
+            }
         }
 
         public string Categoria
         {
             get { return categoria; }
-            set { categoria = value; }
+            set 
+            { 
+                if(!string.IsNullOrEmpty(categoria))
+                {
+                    categoria = value;
+                }
+                
+            }
         }
         
         public float Precio
         {
             get { return precio; }
-            set { precio = value; }
+            set 
+            { 
+                if(precio > 0)
+                {
+                    precio = value;
+                }
+                
+            }
         }
 
+        /// <summary>
+        /// Arma un string con los datos de un cliente.
+        /// </summary>
+        /// <param name="unProducto"></param>
+        /// <returns>String con los datos de un cliente.</returns>
         public static string DatosProductoToString(Producto unProducto)
         {
             return $"Nombre: {unProducto.Nombre}, Apellido: {unProducto.Marca}, Cantidad: {unProducto.Cantidad}, Categoria: {unProducto.Categoria}, Precio: {unProducto.Precio}";
         }
 
         //Sobrecarga de operadores +, -.
+
+        /// <summary>
+        /// Crea un producto y lo agrega a la lista de productos del comercio, si el producto ya existe se actualiza.
+        /// </summary>
+        /// <param name="listaProductos"></param>
+        /// <param name="unProducto"></param>
+        /// <returns>True si creo el producto y lo agrego a la lista, False si el producto ya existe.</returns>
         public static bool operator +(List<Producto> listaProductos , Producto unProducto)
         {
             Producto nuevoProducto;
@@ -109,6 +155,12 @@ namespace Entidades
             return true;
         }
 
+        /// <summary>
+        /// Elimina un producto de la lista de productos del comercio.
+        /// </summary>
+        /// <param name="listaProductos"></param>
+        /// <param name="unProducto"></param>
+        /// <returns>True si el producto fue eliminado, False si no se puedo eliminar.</returns>
         public static bool operator -(List<Producto> listaProductos, Producto unProducto)
         {
             if(listaProductos.Remove(unProducto))

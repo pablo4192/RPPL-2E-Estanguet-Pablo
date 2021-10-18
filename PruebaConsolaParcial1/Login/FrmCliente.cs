@@ -17,7 +17,6 @@ namespace Login
         private FrmCliente()
         {
             InitializeComponent();
-            
         }
 
         public FrmCliente(string usuario): this()

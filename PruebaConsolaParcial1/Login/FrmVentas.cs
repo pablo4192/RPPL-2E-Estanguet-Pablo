@@ -25,12 +25,9 @@ namespace Login
         float importe;
         
         Producto ultimoProductoCarrito;
-
         private FrmVentas()
         {
             InitializeComponent();
-            
-
         }
 
         public FrmVentas(string usuario): this()
@@ -38,8 +35,6 @@ namespace Login
             lblUsuario.Text = usuario;
             auxPilaProductos = new Stack<Producto>();
         }
-
-        
 
         private void btnConfirmarVenta_Click(object sender, EventArgs e)
         {

@@ -20,7 +20,6 @@ namespace Login
         private FrmVentaPorCliente()
         {
             InitializeComponent();
-           
         }
 
         public FrmVentaPorCliente(List<Venta> listaVentas): this()

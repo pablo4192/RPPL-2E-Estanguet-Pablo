@@ -31,7 +31,6 @@ namespace Entidades
             
         }
         
-        //Constructor para crear empleados que no tengan legajo auto incremental y no me varie la cantidad de empleados.
         public Empleado(): base("Por defecto", "Por defecto", 33398112)
         {
             this.usuario = "Por defecto";
@@ -64,6 +63,11 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Arma un string con los datos de un empleado.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>String con los datos del empleado.</returns>
         public override string DatosEmpleadoToString(int key)
         {
             return $"Nombre: {Comercio.ListaEmpleados[key].Nombre}, Apellido: {Comercio.ListaEmpleados[key].Apellido}, Dni: {Comercio.ListaEmpleados[key].Dni}, Usuario: {Comercio.ListaEmpleados[key].Usuario}, Sueldo: {Comercio.ListaEmpleados[key].Sueldo}";

@@ -58,6 +58,9 @@ namespace Entidades
         
         #endregion
 
+        /// <summary>
+        /// Agrega los empleados hardcodeados a la lista de empleados del comercio.
+        /// </summary>
         public void HardcodearEmpleados()
         {
             Comercio.AgregarEmpleado(empleado1);
@@ -67,6 +70,9 @@ namespace Entidades
             Comercio.AgregarEmpleado(administrador1);
         }
 
+        /// <summary>
+        /// Agrega los clientes hardcodeados a la lista de clientes del comercio.
+        /// </summary>
         public void HardcodearClientes()
         {
             Comercio.AgregarCliente(cliente1);
@@ -100,6 +106,9 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Agrega los productos hardcodeados a la lista de productos del comercio.
+        /// </summary>
         public void HardcodearProductos()
         {
             Comercio.AgregarProducto(producto1);
@@ -119,6 +128,9 @@ namespace Entidades
             Comercio.AgregarProducto(producto15);
         }
 
+        /// <summary>
+        /// Agrega productos a la pila de productos hardcodeada para crear ventas hardcodeadas.
+        /// </summary>
         public void CargarPilasProducto()
         {
             pilaProdHardcodeada1.Push(producto15);
@@ -149,6 +161,9 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Instancia ventas hardcodeadas y las agrega a la lista de ventas del comercio.
+        /// </summary>
         public void CrearVentas()
         {
             Venta venta1 = new Venta(pilaProdHardcodeada1, cliente8.NumeroCliente , empleado2.Usuario, new DateTime(2021, 5, 12), CalcularTotal(pilaProdHardcodeada1.ToList()));
@@ -184,7 +199,11 @@ namespace Entidades
             Comercio.ListaVentas.Add(venta15);
         }
 
-        
+        /// <summary>
+        /// Calcula el total de una venta hardcodeada.
+        /// </summary>
+        /// <param name="listaProductos"></param>
+        /// <returns>Importe total de la venta.</returns>
         private float CalcularTotal(List<Producto> listaProductos)
         {
             
