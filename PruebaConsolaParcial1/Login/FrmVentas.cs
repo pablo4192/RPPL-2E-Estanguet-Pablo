@@ -29,8 +29,7 @@ namespace Login
         private FrmVentas()
         {
             InitializeComponent();
-            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
-            this.Icon = icono;
+            
 
         }
 
@@ -40,10 +39,7 @@ namespace Login
             auxPilaProductos = new Stack<Producto>();
         }
 
-        private void FrmVentas_Load(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void btnConfirmarVenta_Click(object sender, EventArgs e)
         {
@@ -84,6 +80,10 @@ namespace Login
                     catch(ClienteSinDineroExcepcion clienteSinDineroExcepcion)
                     {
                         MessageBox.Show(clienteSinDineroExcepcion.Message);
+                        lblAviso.Visible = true;
+                        lblAviso.ForeColor = Color.Red;
+                        lblAviso.Text = "Venta Cancelada";
+                        Limpiar();
                     }
 
                     

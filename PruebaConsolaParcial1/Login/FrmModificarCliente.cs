@@ -18,8 +18,7 @@ namespace Login
         private FrmModificarCliente()
         {
             InitializeComponent();
-            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
-            this.Icon = icono;
+            
         }
 
         public FrmModificarCliente(string usuario): this()
@@ -102,6 +101,11 @@ namespace Login
 
                 if (auxEmpleado.ModificarCliente(clienteAModificar))
                 {
+                    if (clienteAModificar.Saldo > 0)
+                    {
+                        clienteAModificar.PoseeCuenta = true;
+                    }
+
                     lblAviso.ForeColor = Color.Green;
                     this.lblAviso.Text = "Cliente modificado con exito";
                     this.dgvListaClientes.DataSource = null;

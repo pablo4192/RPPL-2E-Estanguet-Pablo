@@ -22,8 +22,7 @@ namespace Login
             InitializeComponent();
             auxEmpleado = new Empleado();
             auxAdmi = new Administrador();
-            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
-            this.Icon = icono;
+            
 
         }
 

@@ -29,8 +29,7 @@ namespace Login
         public FrmMetodoDePago(string importe, int cantidadItems, bool conEnvio)
         {
             InitializeComponent();
-            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
-            this.Icon = icono;
+            
             this.importe = importe;
             this.cantidadItems = cantidadItems;
             this.conEnvio = conEnvio;
@@ -41,17 +40,20 @@ namespace Login
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            
-            if(chkEfectivo.Checked)
+            if(chkEfectivo.Checked || chkCuentaCorriente.Checked)
             {
-                DialogResult = DialogResult.No;
+                if (chkEfectivo.Checked)
+                {
+                    DialogResult = DialogResult.No;
+                }
+                else
+                {
+                    DialogResult = DialogResult.Yes;
+
+                }
+                this.Close();
             }
-            else
-            {
-                DialogResult = DialogResult.Yes;
-                
-            }
-            this.Close();
+           
         }
 
         private void FrmMetodoDePago_Load(object sender, EventArgs e)
@@ -85,6 +87,11 @@ namespace Login
             }
 
             
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
     }
 }

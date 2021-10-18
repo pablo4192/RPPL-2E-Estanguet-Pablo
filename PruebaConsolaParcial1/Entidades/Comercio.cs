@@ -84,7 +84,7 @@ namespace Entidades
 
             foreach (KeyValuePair<int, Empleado> item in listaEmpleados)
             {
-                if (item.Key.ToString() == contrasenia && item.Value.Usuario == usuario)
+                if (item.Key.ToString() == contrasenia.Trim() && item.Value.Usuario == usuario.Trim())
                 {
                     flag = true;
                 }
@@ -128,6 +128,21 @@ namespace Entidades
                float.TryParse(saldo, out saldoFloat)
                )
             {
+                for (int i = 0; i < nombre.Length; i++)
+                {
+                    if (!char.IsLetter(nombre[i]))
+                    {
+                        return false;
+                    }
+                }
+                for (int i = 0; i < apellido.Length; i++)
+                {
+                    if (!char.IsLetter(apellido[i]))
+                    {
+                        return false;
+                    }
+                }
+
                 return true;
             }
 
@@ -204,6 +219,7 @@ namespace Entidades
             int dniInt;
             float sueldoFloat;
             
+            
 
             if(!string.IsNullOrEmpty(nombre) &&
                !string.IsNullOrEmpty(apellido) &&
@@ -211,6 +227,21 @@ namespace Entidades
                !string.IsNullOrEmpty(usuario) &&
                float.TryParse(sueldo, out sueldoFloat))
             {
+                for(int i =0; i<nombre.Length; i++)
+                {
+                    if ( !char.IsLetter(nombre[i]) )
+                    {
+                        return false;
+                    }
+                }
+                for (int i = 0; i < apellido.Length; i++)
+                {
+                    if (!char.IsLetter(apellido[i]))
+                    {
+                        return false;
+                    }
+                }
+
                 return true;
             }
 
@@ -332,7 +363,7 @@ namespace Entidades
 
         }
 
-        //TENGO LANZADA UNA EXCEPCION ADENTRO.
+        
         public static bool ValidarVenta(string numeroCliente, string importe)
         {
             float importeFloat;

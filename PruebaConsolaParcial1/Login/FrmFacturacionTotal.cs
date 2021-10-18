@@ -19,8 +19,7 @@ namespace Login
         {
             InitializeComponent();
             listaDelMes = new List<Venta>();
-            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
-            this.Icon = icono;
+           
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)

@@ -266,7 +266,7 @@ namespace Login
             this.Controls.Add(this.lblMenuVentas);
             this.Name = "FrmVentas";
             this.Text = "FrmVentas";
-            this.Load += new System.EventHandler(this.FrmVentas_Load);
+           
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCompra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

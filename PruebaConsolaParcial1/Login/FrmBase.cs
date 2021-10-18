@@ -15,7 +15,7 @@ namespace Login
         public FrmBase()
         {
             InitializeComponent();
-            
+
         }
 
         private void FrmBase_MouseHover(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace Login
             this.Close();
         }
 
-        //public abstract void DarkMode();
+        
         
 
         

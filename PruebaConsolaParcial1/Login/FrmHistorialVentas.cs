@@ -19,8 +19,7 @@ namespace Login
         public FrmHistorialVentas()
         {
             InitializeComponent();
-            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
-            this.Icon = icono;
+           
         }
 
         public FrmHistorialVentas(string usuario): this()

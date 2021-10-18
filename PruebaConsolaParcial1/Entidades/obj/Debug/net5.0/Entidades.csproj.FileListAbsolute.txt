@@ -21,4 +21,3 @@ C:\Users\KIANO\Desktop\Parcial_1_Labo2\PruebaConsolaParcial1\Entidades\obj\Debug
 C:\Users\KIANO\Desktop\Parcial_1_Labo2\PruebaConsolaParcial1\Entidades\obj\Debug\net5.0\Entidades.dll
 C:\Users\KIANO\Desktop\Parcial_1_Labo2\PruebaConsolaParcial1\Entidades\obj\Debug\net5.0\ref\Entidades.dll
 C:\Users\KIANO\Desktop\Parcial_1_Labo2\PruebaConsolaParcial1\Entidades\obj\Debug\net5.0\Entidades.pdb
-C:\Users\KIANO\Desktop\Parcial_1_Labo2\PruebaConsolaParcial1\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache

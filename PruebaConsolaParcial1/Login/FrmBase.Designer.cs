@@ -30,6 +30,7 @@ namespace Login
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBase));
             this.tmrDesloguear = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@ namespace Login
             this.BackgroundImage = global::Login.Properties.Resources.FondoApp;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBase";

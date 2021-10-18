@@ -18,8 +18,7 @@ namespace Login
         private FrmEmpleados()
         {
             InitializeComponent();
-            Icon icono = new Icon(Application.StartupPath + @"Iconos\iconoPerro.ico");
-            this.Icon = icono;
+            
         }
 
         public FrmEmpleados(string usuario): this()

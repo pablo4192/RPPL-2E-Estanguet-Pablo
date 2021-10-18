@@ -53,7 +53,7 @@ namespace Login
             this.dgvListaVentasDelMes.Name = "dgvListaVentasDelMes";
             this.dgvListaVentasDelMes.RowHeadersWidth = 51;
             this.dgvListaVentasDelMes.RowTemplate.Height = 29;
-            this.dgvListaVentasDelMes.Size = new System.Drawing.Size(569, 209);
+            this.dgvListaVentasDelMes.Size = new System.Drawing.Size(624, 209);
             this.dgvListaVentasDelMes.TabIndex = 2;
             // 
             // lblTotalDelMes
@@ -107,7 +107,7 @@ namespace Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 349);
+            this.ClientSize = new System.Drawing.Size(648, 351);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.lblMonto);
